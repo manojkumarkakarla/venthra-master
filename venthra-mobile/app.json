@@ -1,0 +1,51 @@
+{
+  "expo": {
+    "name": "venthra-mobile",
+    "slug": "venthra-mobile",
+    "version": "1.0.0",
+    "orientation": "portrait",
+    "icon": "./assets/images/VTS_NEW_LOGO.png",
+    "scheme": "venthramobile",
+    "userInterfaceStyle": "automatic",
+    "newArchEnabled": true,
+    "ios": {
+      "supportsTablet": true
+    },
+    "android": {
+      "adaptiveIcon": {
+        "backgroundColor": "#E6F4FE",
+        "foregroundImage": "./assets/images/VTS_NEW_LOGO.png"
+      },
+      "edgeToEdgeEnabled": true,
+      "predictiveBackGestureEnabled": false,
+      "package": "com.kakarlacharankumar.venthramobile"
+    },
+    "web": {
+      "output": "static",
+      "favicon": "./assets/images/VTS_NEW_LOGO.png"
+    },
+    "plugins": [
+      "expo-router",
+      [
+        "expo-splash-screen",
+        {
+          "backgroundColor": "#ffffff",
+          "dark": {
+            "backgroundColor": "#ffffff"
+          }
+        }
+      ]
+    ],
+    "experiments": {
+      "typedRoutes": true,
+      "reactCompiler": true
+    },
+    "extra": {
+      "router": {},
+      "eas": {
+        "projectId": "322fc336-ca1f-41a1-8032-d45b488ef083"
+      }
+    },
+    "owner": "kakarlacharankumar"
+  }
+}

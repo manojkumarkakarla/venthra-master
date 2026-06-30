@@ -1,0 +1,8 @@
+[{
+  "relation": ["delegate_permission/common.handle_all_urls"],
+  "target": {
+    "namespace": "android_app",
+    "package_name": "app.vercel.venthrasolutions.twa",
+    "sha256_cert_fingerprints": ["5F:EC:90:75:DD:90:B1:21:55:31:D8:46:BD:8B:07:B4:12:40:DE:16:C7:BF:91:CA:E0:F5:B4:40:8D:3C:21:92"]
+  }
+}]
