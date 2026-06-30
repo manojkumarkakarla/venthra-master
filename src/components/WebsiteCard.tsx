@@ -14,7 +14,7 @@ const WebsiteCard = ({ website, index, onSelect, className }: WebsiteCardProps) 
     <article
       onClick={() => onSelect(website)}
       className={cn(
-        "relative flex flex-col h-full bg-white border border-slate-200/80 shadow-sm rounded-3xl overflow-hidden cursor-pointer transition-colors duration-300",
+        "group relative flex flex-col h-full bg-white border border-slate-200/80 shadow-sm rounded-3xl overflow-hidden cursor-pointer transition-all duration-300 hover:shadow-lg hover:border-teal-500/30",
         className
       )}
     >
@@ -41,10 +41,10 @@ const WebsiteCard = ({ website, index, onSelect, className }: WebsiteCardProps) 
 
         {/* Header: Title and Icon */}
         <div className="flex items-center justify-between mb-0 sm:mb-3">
-          <h3 className="font-['Georgia'] text-sm sm:text-xl font-bold text-slate-900 transition-colors leading-tight line-clamp-2">
+          <h3 className="font-['Georgia'] text-sm sm:text-xl font-bold text-slate-900 group-hover:text-transparent group-hover:bg-clip-text group-hover:bg-gradient-to-r group-hover:from-teal-500 group-hover:to-blue-600 transition-all leading-tight line-clamp-2">
             {website.title}
           </h3>
-          <div className="hidden sm:block p-2 rounded-xl bg-slate-50 shadow-sm border border-slate-100 text-slate-600 transition-colors shrink-0">
+          <div className="hidden sm:block p-2 rounded-xl bg-slate-50 group-hover:bg-teal-50/50 shadow-sm border border-slate-100 group-hover:border-teal-200/60 text-slate-500 group-hover:text-teal-600 transition-colors shrink-0">
             <website.icon className="w-4 h-4 sm:w-5 sm:h-5" />
           </div>
         </div>
@@ -68,8 +68,8 @@ const WebsiteCard = ({ website, index, onSelect, className }: WebsiteCardProps) 
 
         {/* Footer: Action Link */}
         <div className="hidden sm:flex pt-4 border-t border-slate-100 justify-end mt-auto">
-          <div className="text-slate-400 transition-colors">
-            <ArrowUpRight className="w-5 h-5 transition-transform" />
+          <div className="text-slate-400 group-hover:text-teal-500 transition-colors">
+            <ArrowUpRight className="w-5 h-5 group-hover:translate-x-1 group-hover:-translate-y-1 transition-transform" />
           </div>
         </div>
       </div>

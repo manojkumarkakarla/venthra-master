@@ -1,9 +1,14 @@
+import { useState, lazy, Suspense } from "react";
 import { Linkedin, Instagram, ArrowRight, Youtube } from "lucide-react";
 import { Link } from "react-router-dom";
+import { Button } from "@/components/ui/button";
 import vtsLogo from "@/assets/VTS_NEW_LOGO.png";
+
+const ProjectInquiryModal = lazy(() => import("./ProjectInquiryModal"));
 
 const Footer = () => {
   const currentYear = new Date().getFullYear();
+  const [isModalOpen, setIsModalOpen] = useState(false);
 
   const footerLinks = {
     resources: [
@@ -29,7 +34,50 @@ const Footer = () => {
   ];
 
   return (
-    <footer className="relative bg-slate-950 text-slate-300 overflow-hidden border-t border-slate-900">
+    <>
+      {/* Global CTA Section (Light Theme) */}
+      <section className="w-full bg-slate-50 py-16 lg:py-24 relative overflow-hidden border-t border-slate-200">
+        <Suspense fallback={null}>
+          <ProjectInquiryModal open={isModalOpen} onOpenChange={setIsModalOpen} />
+        </Suspense>
+        
+        {/* Background decorations */}
+        <div className="absolute top-0 right-0 w-96 h-96 bg-teal-100/60 rounded-full mix-blend-multiply filter blur-3xl opacity-50 translate-x-1/2 -translate-y-1/2"></div>
+        <div className="absolute bottom-0 left-0 w-96 h-96 bg-blue-100/60 rounded-full mix-blend-multiply filter blur-3xl opacity-50 -translate-x-1/2 translate-y-1/2"></div>
+        
+        <div className="container mx-auto px-4 sm:px-6 relative z-10 text-center">
+          <div className="max-w-4xl mx-auto bg-white rounded-[2.5rem] shadow-[0_8px_40px_rgba(0,0,0,0.06)] border border-slate-100 p-8 sm:p-12 md:p-20 relative overflow-hidden">
+            {/* Subtle card internal decoration */}
+            <div className="absolute top-0 left-0 w-full h-2 bg-gradient-to-r from-teal-400 to-blue-500"></div>
+
+            <div className="space-y-8 relative z-10">
+              <div className="inline-flex items-center justify-center px-5 py-2 rounded-full bg-slate-50 border border-slate-200 text-xs sm:text-sm font-bold tracking-[0.1em] text-slate-700 shadow-sm uppercase">
+                Let's build something amazing
+              </div>
+              
+              <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold font-['Georgia'] text-slate-900 tracking-tight leading-[1.15]">
+                Ready to transform your digital presence?
+              </h2>
+              
+              <p className="text-base sm:text-lg text-slate-600 leading-relaxed max-w-2xl mx-auto">
+                Partner with Venthra Solutions to engineer custom, high-performance websites and digital solutions tailored to help your business grow.
+              </p>
+              
+              <div className="pt-4 flex justify-center">
+                <Button 
+                  onClick={() => setIsModalOpen(true)}
+                  className="w-full sm:w-auto h-14 px-8 text-base font-semibold rounded-full bg-gradient-to-r from-teal-500 to-blue-600 text-white shadow-[0_8px_20px_rgba(20,184,166,0.3)] hover:shadow-[0_8px_25px_rgba(20,184,166,0.4)] hover:scale-105 transition-all duration-300 flex items-center justify-center gap-2 group"
+                >
+                  Start Your Project
+                  <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
+                </Button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <footer className="relative bg-slate-950 text-slate-300 overflow-hidden border-t border-slate-900">
       {/* Background Ambience */}
       <div className="absolute inset-0 pointer-events-none overflow-hidden">
 
@@ -176,6 +224,7 @@ const Footer = () => {
         </div>
       </div>
     </footer>
+    </>
   );
 };
 

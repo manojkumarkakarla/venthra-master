@@ -253,15 +253,14 @@ const OurWorkPage = () => {
                     <section className="relative min-h-[70vh] flex items-center justify-center pt-24">
                         <div className="container relative z-10 mx-auto px-4 sm:px-6 text-center">
                             <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-white/60 dark:bg-slate-900/60 backdrop-blur-md border border-slate-200/50 dark:border-slate-700/50 shadow-lg mb-8 animate-fade-up">
-                                <Sparkles className="w-4 h-4 text-blue-500" />
                                 <span className="text-sm font-bold uppercase tracking-widest text-slate-800 dark:text-slate-200">Venthra Portfolio</span>
                             </div>
 
                             <h1 className="text-5xl md:text-7xl lg:text-8xl font-black text-slate-900 dark:text-white tracking-tighter leading-[1.1] mb-8 animate-fade-up" style={{ animationDelay: '100ms' }}>
                                 Our <br className="md:hidden" />
                                 <span className="relative inline-block">
-                                    <span className="absolute -inset-2 bg-gradient-to-r from-blue-500/20 via-purple-500/20 to-cyan-500/20 blur-2xl rounded-full" />
-                                    <span className="relative text-transparent bg-clip-text bg-gradient-to-r from-blue-600 via-purple-600 to-cyan-500">Masterpieces</span>
+                                    <span className="absolute -inset-2 bg-gradient-to-r from-teal-500/20 via-cyan-500/20 to-blue-600/20 blur-2xl rounded-full" />
+                                    <span className="relative text-transparent bg-clip-text bg-gradient-to-r from-teal-500 via-cyan-500 to-blue-600">Masterpieces</span>
                                 </span>
                             </h1>
 
@@ -291,13 +290,7 @@ const OurWorkPage = () => {
                                         className="sticky z-10 w-full rounded-[2.5rem] sm:rounded-[3rem] bg-white/80 dark:bg-slate-900/80 backdrop-blur-3xl border border-white dark:border-slate-800 shadow-[0_30px_60px_-15px_rgba(0,0,0,0.1)] dark:shadow-[0_30px_60px_-15px_rgba(0,0,0,0.5)] overflow-hidden transition-all duration-700"
                                         style={{ top: stickyTop }}
                                     >
-                                        {/* Giant Background Number */}
-                                        <div className={`absolute -top-10 ${numberPosition} text-[15rem] sm:text-[20rem] font-black text-slate-900/[0.04] dark:text-white/[0.03] pointer-events-none select-none leading-none z-0 transition-all`}>
-                                            {project.id}
-                                        </div>
-
-                                        {/* Theme Gradient Glow inside card */}
-                                        <div className="absolute top-0 left-0 w-full h-2 bg-gradient-to-r from-transparent via-current to-transparent opacity-20" style={{ color: `var(--${project.theme}-500)` }} />
+                                        {/* (Giant Background Number and Top Border Glow removed) */}
 
                                         <div className={`grid ${gridCols} gap-8 lg:gap-12 p-6 sm:p-8 lg:p-12 relative z-10 items-center`}>
 
@@ -305,7 +298,8 @@ const OurWorkPage = () => {
                                             <div className={`flex flex-col justify-center ${contentOrder} space-y-6`}>
                                                 <div className="space-y-3">
                                                     <div className={`inline-flex items-center gap-2 ${colors.text} font-bold tracking-widest uppercase text-[10px] sm:text-xs`}>
-                                                        <Rocket className="w-3 h-3" />
+                                                        <span className="opacity-50">{project.id}</span>
+                                                        <span className="w-1 h-1 rounded-full bg-current opacity-50" />
                                                         <span>{project.category}</span>
                                                     </div>
                                                     <h2 className="text-3xl sm:text-4xl lg:text-5xl font-black text-slate-900 dark:text-white leading-[1.1] tracking-tight">
@@ -342,11 +336,10 @@ const OurWorkPage = () => {
                                                 </div>
 
                                                 <div className="pt-2">
-                                                    <Button asChild className={`rounded-full ${colors.bg} hover:opacity-90 text-white px-6 h-10 sm:h-12 text-sm font-bold shadow-xl transition-all hover:scale-105 hover:shadow-[0_10px_30px_-10px_currentColor]`}>
-                                                        <a href={project.link} target="_blank" rel="noopener noreferrer" className="gap-2 flex items-center justify-center w-max">
-                                                            Explore Project <ExternalLink className="w-4 h-4" />
-                                                        </a>
-                                                    </Button>
+                                                    <a href={project.link} target="_blank" rel="noopener noreferrer" className={`group relative flex items-center justify-center w-max uppercase tracking-wider overflow-hidden rounded-full bg-white dark:bg-slate-900 border-2 ${colors.border} ${colors.text} hover:border-transparent dark:hover:border-transparent px-8 h-12 sm:h-14 text-sm sm:text-base font-bold shadow-sm transition-all duration-300 hover:scale-[1.02] hover:shadow-lg`}>
+                                                        <span className={`absolute inset-0 w-full h-full ${colors.bg} scale-x-0 group-hover:scale-x-100 origin-left transition-transform duration-500 ease-out z-0`} />
+                                                        <span className="relative z-10 transition-colors duration-300 group-hover:text-white">View Project</span>
+                                                    </a>
                                                 </div>
                                             </div>
 

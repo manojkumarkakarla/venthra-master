@@ -196,10 +196,10 @@ const VTSAssistant = () => {
         <button
             onClick={() => handleSendMessage(query)}
             disabled={isTyping}
-            className="text-left text-[10px] bg-blue-50 hover:bg-blue-100 disabled:opacity-50 text-blue-900 border border-blue-200 px-2 py-1 rounded-md transition-all duration-200 hover:scale-[1.02] active:scale-95 flex items-center justify-between group"
+            className="text-left text-[10px] bg-teal-50 hover:bg-teal-100 disabled:opacity-50 text-teal-900 border border-teal-200 px-2 py-1 rounded-md transition-all duration-200 hover:scale-[1.02] active:scale-95 flex items-center justify-between group"
         >
             {text}
-            <ChevronRight className="w-2.5 h-2.5 text-blue-400 group-hover:text-blue-600" />
+            <ChevronRight className="w-2.5 h-2.5 text-teal-400 group-hover:text-teal-600" />
         </button>
     );
 
@@ -214,7 +214,7 @@ const VTSAssistant = () => {
                         className="fixed z-[99999] flex flex-col overflow-hidden font-sans bg-white backdrop-blur-xl border border-slate-200 shadow-2xl transition-all duration-300 rounded-2xl bottom-4 right-4 sm:bottom-6 sm:right-6 w-[92vw] sm:w-[380px] max-w-[400px] h-[80dvh] max-h-[600px] origin-bottom-right"
                     >
                         {/* Header */}
-                        <div className="bg-gradient-to-r from-blue-950 to-blue-900 p-4 flex items-center justify-between shadow-lg shrink-0">
+                        <div className="bg-gradient-to-r from-teal-500 to-blue-600 p-4 flex items-center justify-between shadow-lg shrink-0">
                             <div className="flex items-center gap-3">
                                 <div className="bg-white/20 p-2 rounded-full backdrop-blur-sm border border-white/30">
                                     <Bot className="w-5 h-5 text-white" />
@@ -267,7 +267,7 @@ const VTSAssistant = () => {
                                             "max-w-[85%] p-3 rounded-2xl text-xs leading-relaxed shadow-sm relative",
                                             msg.isBot
                                                 ? "bg-white text-slate-700 rounded-tl-none border border-slate-200 prose prose-p:text-xs prose-li:text-xs prose-headings:text-sm prose-strong:text-xs max-w-none prose-p:my-1 prose-ul:my-1"
-                                                : "bg-blue-950 text-white rounded-tr-none shadow-blue-900/10"
+                                                : "bg-gradient-to-r from-teal-500 to-blue-600 text-white rounded-tr-none shadow-teal-900/10"
                                         )}
                                     >
                                         {msg.isBot ? (
@@ -288,9 +288,9 @@ const VTSAssistant = () => {
                             {isTyping && (
                                 <div className="flex justify-start">
                                     <div className="bg-white p-4 rounded-2xl rounded-tl-none border border-slate-200 shadow-sm flex gap-1 items-center">
-                                        <span className="w-1.5 h-1.5 bg-blue-900 rounded-full animate-bounce [animation-delay:-0.3s]"></span>
-                                        <span className="w-1.5 h-1.5 bg-blue-900 rounded-full animate-bounce [animation-delay:-0.15s]"></span>
-                                        <span className="w-1.5 h-1.5 bg-blue-900 rounded-full animate-bounce"></span>
+                                        <span className="w-1.5 h-1.5 bg-teal-500 rounded-full animate-bounce [animation-delay:-0.3s]"></span>
+                                        <span className="w-1.5 h-1.5 bg-teal-500 rounded-full animate-bounce [animation-delay:-0.15s]"></span>
+                                        <span className="w-1.5 h-1.5 bg-teal-500 rounded-full animate-bounce"></span>
                                     </div>
                                 </div>
                             )}
@@ -327,12 +327,12 @@ const VTSAssistant = () => {
                                     value={inputValue}
                                     onChange={(e) => setInputValue(e.target.value)}
                                     placeholder="Type a message..."
-                                    className="flex-1 bg-slate-100 border-none rounded-full px-4 py-3 text-sm focus:outline-none focus:ring-2 focus:ring-blue-900/30 text-slate-900 placeholder:text-slate-500"
+                                    className="flex-1 bg-slate-100 border-none rounded-full px-4 py-3 text-sm focus:outline-none focus:ring-2 focus:ring-teal-500/30 text-slate-900 placeholder:text-slate-500"
                                 />
                                 <button
                                     type="submit"
                                     disabled={!inputValue.trim() || isTyping}
-                                    className="bg-blue-900 hover:bg-blue-800 disabled:opacity-50 disabled:cursor-not-allowed text-white p-3 rounded-full transition-all shadow-md hover:shadow-lg active:scale-95 flex items-center justify-center transform group"
+                                    className="bg-gradient-to-r from-teal-500 to-blue-600 hover:from-teal-600 hover:to-blue-700 disabled:opacity-50 disabled:cursor-not-allowed text-white p-3 rounded-full transition-all shadow-md hover:shadow-lg active:scale-95 flex items-center justify-center transform group"
                                 >
                                     <Send className="w-4 h-4 ml-0.5" />
                                 </button>
@@ -351,7 +351,7 @@ const VTSAssistant = () => {
                         className="fixed bottom-6 right-6 z-[99999] group"
                     >
                         <div className={cn(
-                            "absolute -inset-3 bg-blue-500/20 rounded-full blur-xl transition-all duration-1000",
+                            "absolute -inset-3 bg-teal-500/20 rounded-full blur-xl transition-all duration-1000",
                             showPulse ? "opacity-100 scale-110" : "opacity-0 scale-100"
                         )} />
 
@@ -359,9 +359,9 @@ const VTSAssistant = () => {
                             onClick={() => setIsOpen(true)}
                             onMouseEnter={() => setIsHovered(true)}
                             onMouseLeave={() => setIsHovered(false)}
-                            className="relative bg-slate-900 text-white p-3 rounded-full shadow-[0_10px_40px_-10px_rgba(0,0,0,0.5)] hover:shadow-[0_20px_60px_-10px_rgba(59,130,246,0.5)] transition-all duration-300 transform hover:-translate-y-2 hover:scale-105 active:translate-y-0 active:scale-100 border-2 border-slate-700 hover:border-blue-500 flex items-center justify-center overflow-hidden"
+                            className="relative bg-gradient-to-r from-teal-500 to-blue-600 text-white p-3 rounded-full shadow-[0_10px_40px_-10px_rgba(20,184,166,0.5)] hover:shadow-[0_20px_60px_-10px_rgba(20,184,166,0.7)] transition-all duration-300 transform hover:-translate-y-2 hover:scale-105 active:translate-y-0 active:scale-100 border-2 border-teal-300/50 hover:border-white flex items-center justify-center overflow-hidden"
                         >
-                            <div className="absolute inset-0 bg-gradient-to-tr from-blue-600 to-slate-900 opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
+                            <div className="absolute inset-0 bg-gradient-to-r from-teal-400 to-blue-500 opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
 
                             <motion.div
                                 animate={{
@@ -385,8 +385,8 @@ const VTSAssistant = () => {
                                             <stop offset="100%" stopColor="#cbd5e1" />
                                         </linearGradient>
                                         <linearGradient id="blueGlow" x1="0%" y1="0%" x2="100%" y2="100%">
-                                            <stop offset="0%" stopColor="#60a5fa" />
-                                            <stop offset="100%" stopColor="#2563eb" />
+                                            <stop offset="0%" stopColor="#2dd4bf" />
+                                            <stop offset="100%" stopColor="#0ea5e9" />
                                         </linearGradient>
                                     </defs>
 
@@ -408,19 +408,19 @@ const VTSAssistant = () => {
 
                                     <rect x="36" y="28" width="28" height="18" rx="4" fill="#1e293b" />
 
-                                    <circle cx="43" cy="35" r="2.5" fill="#60a5fa" />
-                                    <circle cx="57" cy="35" r="2.5" fill="#60a5fa" />
+                                    <circle cx="43" cy="35" r="2.5" fill="#14b8a6" />
+                                    <circle cx="57" cy="35" r="2.5" fill="#14b8a6" />
 
-                                    <path d="M 43 40 Q 50 44 57 40" stroke="#60a5fa" strokeWidth="1.5" strokeLinecap="round" fill="none" />
+                                    <path d="M 43 40 Q 50 44 57 40" stroke="#14b8a6" strokeWidth="1.5" strokeLinecap="round" fill="none" />
 
                                     <line x1="50" y1="20" x2="50" y2="10" stroke="#64748b" strokeWidth="2" />
-                                    <circle cx="50" cy="8" r="2" fill="#ef4444" className="animate-ping" />
-                                    <circle cx="50" cy="8" r="2" fill="#ef4444" />
+                                    <circle cx="50" cy="8" r="2" fill="#14b8a6" className="animate-ping" />
+                                    <circle cx="50" cy="8" r="2" fill="#14b8a6" />
                                 </svg>
                             </motion.div>
 
-                            <span className="absolute top-0 right-0 w-3.5 h-3.5 bg-red-500 border-2 border-slate-900 rounded-full flex items-center justify-center z-20">
-                                <span className="w-full h-full rounded-full bg-red-500 animate-ping opacity-75 absolute" />
+                            <span className="absolute top-0 right-0 w-3.5 h-3.5 bg-teal-500 border-2 border-slate-900 rounded-full flex items-center justify-center z-20">
+                                <span className="w-full h-full rounded-full bg-teal-500 animate-ping opacity-75 absolute" />
                             </span>
                         </button>
 

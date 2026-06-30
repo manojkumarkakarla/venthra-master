@@ -5,7 +5,7 @@ import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select";
 import { Label } from "@/components/ui/label";
-import { Check, Loader2, Send, ShoppingCart, Globe, Rocket, User, AppWindow, MoreHorizontal, ArrowRight, ArrowLeft, Sparkles, MessageSquare, Zap } from "lucide-react";
+import { Check, Loader2, Send, ShoppingCart, Globe, Rocket, User, AppWindow, MoreHorizontal, ArrowRight, ArrowLeft, Sparkles, MessageSquare, Zap, X } from "lucide-react";
 import { useToast } from "@/components/ui/use-toast";
 
 interface ProjectInquiryModalProps {
@@ -109,35 +109,44 @@ const ProjectInquiryModal = ({ open, onOpenChange }: ProjectInquiryModalProps) =
     return (
         <Dialog open={open} onOpenChange={onOpenChange}>
             <DialogContent 
-                className="sm:max-w-[600px] w-[95%] p-0 overflow-hidden rounded-3xl border-none shadow-2xl bg-white z-[100000]"
+                className="sm:max-w-[600px] w-[95%] p-0 overflow-hidden rounded-3xl border-none shadow-2xl bg-white z-[100000] [&>button]:hidden"
                 onPointerDownOutside={(e) => e.preventDefault()}
             >
                 <div 
                     id="modal-scroll-root"
-                    className="max-h-[85vh] overflow-y-auto overflow-x-hidden custom-scrollbar overscroll-contain"
+                    className="max-h-[85vh] overflow-y-auto overflow-x-hidden custom-scrollbar overscroll-contain relative"
                     onWheel={(e) => e.stopPropagation()}
                 >
+                    {/* Highly visible Close Button */}
+                    <button 
+                        onClick={handleClose}
+                        className="absolute top-4 right-4 z-[999] w-10 h-10 bg-white hover:bg-slate-100 text-slate-600 hover:text-slate-900 rounded-full flex items-center justify-center transition-colors shadow-md border border-slate-200"
+                        aria-label="Close modal"
+                    >
+                        <X className="w-5 h-5" />
+                    </button>
+
                     {step !== 3 && (
-                        <div className="bg-blue-950 px-6 py-10 sm:px-10 sm:py-12 text-white relative overflow-hidden">
-                            <div className="absolute top-0 right-0 p-4 opacity-5 pointer-events-none">
-                                <Sparkles className="w-32 h-32 rotate-12" />
+                        <div className="bg-gradient-to-br from-teal-50 via-slate-50 to-blue-50 px-6 py-10 sm:px-10 sm:py-12 relative overflow-hidden border-b border-slate-100">
+                            <div className="absolute top-0 right-0 p-4 opacity-10 pointer-events-none">
+                                <Sparkles className="w-32 h-32 text-teal-500 rotate-12" />
                             </div>
-                            <div className="relative z-10 flex items-center justify-between">
+                            <div className="relative z-10 flex items-center justify-between mt-2">
                                 <div className="space-y-2">
                                     <div className="flex items-center gap-2">
-                                        <span className="px-3 py-0.5 bg-blue-500/30 text-blue-200 text-[10px] font-black uppercase tracking-[0.2em] rounded-full border border-blue-400/20">
-                                            Phase {step}
+                                        <span className="px-3 py-1 bg-white text-teal-700 text-[10px] font-bold uppercase tracking-[0.2em] rounded-full border border-teal-200 shadow-sm">
+                                            Step {step} of 2
                                         </span>
                                     </div>
-                                    <h2 className="text-2xl sm:text-4xl font-black tracking-tight leading-tight">
-                                        {step === 1 ? "Get Started" : "The Vision"}
+                                    <h2 className="text-3xl sm:text-4xl font-extrabold tracking-tight text-slate-900">
+                                        {step === 1 ? "Start Your Project" : "Project Details"}
                                     </h2>
                                 </div>
-                                <div className="hidden sm:flex items-center gap-4 bg-white/5 p-3 rounded-2xl border border-white/10 backdrop-blur-sm">
-                                    <div className={`w-10 h-10 rounded-xl flex items-center justify-center transition-all ${step === 1 ? 'bg-blue-500 text-white shadow-lg' : 'bg-blue-900/50 text-blue-400'}`}>
+                                <div className="hidden sm:flex items-center gap-3 bg-white p-2.5 rounded-2xl border border-slate-200 shadow-sm">
+                                    <div className={`w-10 h-10 rounded-xl flex items-center justify-center transition-all ${step === 1 ? 'bg-gradient-to-br from-teal-400 to-blue-500 text-white shadow-md' : 'bg-slate-100 text-slate-400'}`}>
                                         <User className="w-5 h-5" />
                                     </div>
-                                    <div className={`w-10 h-10 rounded-xl flex items-center justify-center transition-all ${step === 2 ? 'bg-blue-500 text-white shadow-lg' : 'bg-blue-900/50 text-blue-400'}`}>
+                                    <div className={`w-10 h-10 rounded-xl flex items-center justify-center transition-all ${step === 2 ? 'bg-gradient-to-br from-teal-400 to-blue-500 text-white shadow-md' : 'bg-slate-100 text-slate-400'}`}>
                                         <Zap className="w-5 h-5" />
                                     </div>
                                 </div>
@@ -196,74 +205,88 @@ const ProjectInquiryModal = ({ open, onOpenChange }: ProjectInquiryModalProps) =
                                 {step === 1 && (
                                     <div className="space-y-6">
                                         <div className="space-y-2">
-                                            <Label className="text-xs font-black uppercase tracking-widest text-blue-950">Full Name</Label>
-                                            <Input placeholder="e.g. Elon Musk" value={formData.name} onChange={(e) => handleChange("name", e.target.value)} required className="h-14 bg-slate-50 border-2 rounded-2xl px-6 text-lg" />
+                                            <Label className="text-xs font-bold uppercase tracking-widest text-slate-600">Full Name</Label>
+                                            <Input placeholder="e.g. Elon Musk" value={formData.name} onChange={(e) => handleChange("name", e.target.value)} required className="h-14 bg-white border border-slate-200 focus:border-teal-500 focus:ring-teal-500/20 rounded-2xl px-6 text-base shadow-sm transition-all" />
                                         </div>
                                         <div className="space-y-2">
-                                            <Label className="text-xs font-black uppercase tracking-widest text-blue-950">Email</Label>
-                                            <Input type="email" placeholder="hello@world.com" value={formData.email} onChange={(e) => handleChange("email", e.target.value)} required className="h-14 bg-slate-50 border-2 rounded-2xl px-6 text-lg" />
+                                            <Label className="text-xs font-bold uppercase tracking-widest text-slate-600">Email</Label>
+                                            <Input type="email" placeholder="hello@world.com" value={formData.email} onChange={(e) => handleChange("email", e.target.value)} required className="h-14 bg-white border border-slate-200 focus:border-teal-500 focus:ring-teal-500/20 rounded-2xl px-6 text-base shadow-sm transition-all" />
                                         </div>
                                         <div className="space-y-2">
-                                            <Label className="text-xs font-black uppercase tracking-widest text-blue-950">Mobile</Label>
-                                            <Input type="tel" placeholder="+91" value={formData.phone} onChange={(e) => handleChange("phone", e.target.value)} required className="h-14 bg-slate-50 border-2 rounded-2xl px-6 text-lg" />
+                                            <Label className="text-xs font-bold uppercase tracking-widest text-slate-600">Mobile</Label>
+                                            <Input type="tel" placeholder="+91" value={formData.phone} onChange={(e) => handleChange("phone", e.target.value)} required className="h-14 bg-white border border-slate-200 focus:border-teal-500 focus:ring-teal-500/20 rounded-2xl px-6 text-base shadow-sm transition-all" />
                                         </div>
-                                        <Button type="button" onClick={nextStep} className="w-full h-16 bg-blue-600 text-white rounded-2xl text-xl font-black italic">CONTINUE <ArrowRight className="ml-2 w-6 h-6" /></Button>
+                                        <Button type="button" onClick={nextStep} className="w-full h-14 bg-gradient-to-r from-teal-500 to-blue-600 hover:from-teal-400 hover:to-blue-500 text-white rounded-2xl text-lg font-bold shadow-md hover:shadow-lg hover:scale-[1.02] transition-all">
+                                            Continue to Details <ArrowRight className="ml-2 w-5 h-5" />
+                                        </Button>
                                     </div>
                                 )}
 
                                 {step === 2 && (
-                                    <div className="space-y-10">
-                                        <div className="grid grid-cols-2 sm:grid-cols-3 gap-4">
-                                            {projectTypes.map((type) => (
-                                                <button
-                                                    key={type.id}
-                                                    type="button"
-                                                    onClick={() => handleChange("projectType", type.id)}
-                                                    className={`flex flex-col items-center justify-center p-4 rounded-3xl border-4 transition-all h-28 ${
-                                                        formData.projectType === type.id ? "border-blue-600 bg-blue-50 text-blue-700" : "border-slate-50 bg-slate-50 text-slate-400"
-                                                    }`}
-                                                >
-                                                    {type.icon}
-                                                    <span className="text-[10px] font-black uppercase mt-2">{type.label}</span>
-                                                </button>
-                                            ))}
+                                    <div className="space-y-8">
+                                        <div className="space-y-3">
+                                            <Label className="text-xs font-bold uppercase tracking-widest text-slate-600">Project Type</Label>
+                                            <div className="grid grid-cols-2 sm:grid-cols-3 gap-3">
+                                                {projectTypes.map((type) => (
+                                                    <button
+                                                        key={type.id}
+                                                        type="button"
+                                                        onClick={() => handleChange("projectType", type.id)}
+                                                        className={`flex flex-col items-center justify-center p-4 rounded-2xl border-2 transition-all h-24 ${
+                                                            formData.projectType === type.id ? "border-teal-500 bg-teal-50 text-teal-700 shadow-sm" : "border-slate-100 bg-white hover:bg-slate-50 text-slate-500 hover:border-slate-200 shadow-sm"
+                                                        }`}
+                                                    >
+                                                        {type.icon}
+                                                        <span className="text-[11px] font-bold mt-2">{type.label}</span>
+                                                    </button>
+                                                ))}
+                                            </div>
                                         </div>
                                         <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
-                                            <Select value={formData.budget} onValueChange={(val) => handleChange("budget", val)}>
-                                                <SelectTrigger className="h-14 bg-slate-50 border-2 rounded-2xl px-6 font-bold">
-                                                    <SelectValue placeholder="Project Budget" />
-                                                </SelectTrigger>
-                                                <SelectContent className="z-[100001] bg-white border shadow-2xl rounded-2xl">
-                                                    <SelectItem value="< 30k">Starter (Under ₹30k)</SelectItem>
-                                                    <SelectItem value="30k-75k">Professional (₹30k - ₹75k)</SelectItem>
-                                                    <SelectItem value="75k-1.5L">Premium (₹75k - ₹1.5L)</SelectItem>
-                                                    <SelectItem value="1.5L-5L">Enterprise (₹1.5L - ₹5L)</SelectItem>
-                                                    <SelectItem value="5L+">Custom Tier (₹5L+)</SelectItem>
-                                                </SelectContent>
-                                            </Select>
-                                            <Select value={formData.timeline} onValueChange={(val) => handleChange("timeline", val)}>
-                                                <SelectTrigger className="h-14 bg-slate-50 border-2 rounded-2xl px-6 font-bold">
-                                                    <SelectValue placeholder="Target Timeline" />
-                                                </SelectTrigger>
-                                                <SelectContent className="z-[100001] bg-white border shadow-2xl rounded-2xl">
-                                                    <SelectItem value="Urgent">Rapid (2-4 Weeks)</SelectItem>
-                                                    <SelectItem value="1-2 Months">Standard (1-2 Months)</SelectItem>
-                                                    <SelectItem value="3+ Months">Enterprise (3+ Months)</SelectItem>
-                                                    <SelectItem value="Flexible">Strategic / Flexible</SelectItem>
-                                                </SelectContent>
-                                            </Select>
+                                            <div className="space-y-2">
+                                                <Label className="text-xs font-bold uppercase tracking-widest text-slate-600">Budget Range</Label>
+                                                <Select value={formData.budget} onValueChange={(val) => handleChange("budget", val)}>
+                                                    <SelectTrigger className="h-14 bg-white border border-slate-200 focus:border-teal-500 focus:ring-teal-500/20 rounded-2xl px-6 font-medium text-slate-700 shadow-sm">
+                                                        <SelectValue placeholder="Select Budget" />
+                                                    </SelectTrigger>
+                                                    <SelectContent className="z-[100001] bg-white border border-slate-100 shadow-xl rounded-2xl">
+                                                        <SelectItem value="< 30k">Starter (Under ₹30k)</SelectItem>
+                                                        <SelectItem value="30k-75k">Professional (₹30k - ₹75k)</SelectItem>
+                                                        <SelectItem value="75k-1.5L">Premium (₹75k - ₹1.5L)</SelectItem>
+                                                        <SelectItem value="1.5L-5L">Enterprise (₹1.5L - ₹5L)</SelectItem>
+                                                        <SelectItem value="5L+">Custom Tier (₹5L+)</SelectItem>
+                                                    </SelectContent>
+                                                </Select>
+                                            </div>
+                                            <div className="space-y-2">
+                                                <Label className="text-xs font-bold uppercase tracking-widest text-slate-600">Timeline</Label>
+                                                <Select value={formData.timeline} onValueChange={(val) => handleChange("timeline", val)}>
+                                                    <SelectTrigger className="h-14 bg-white border border-slate-200 focus:border-teal-500 focus:ring-teal-500/20 rounded-2xl px-6 font-medium text-slate-700 shadow-sm">
+                                                        <SelectValue placeholder="Select Timeline" />
+                                                    </SelectTrigger>
+                                                    <SelectContent className="z-[100001] bg-white border border-slate-100 shadow-xl rounded-2xl">
+                                                        <SelectItem value="Urgent">Rapid (2-4 Weeks)</SelectItem>
+                                                        <SelectItem value="1-2 Months">Standard (1-2 Months)</SelectItem>
+                                                        <SelectItem value="3+ Months">Enterprise (3+ Months)</SelectItem>
+                                                        <SelectItem value="Flexible">Strategic / Flexible</SelectItem>
+                                                    </SelectContent>
+                                                </Select>
+                                            </div>
                                         </div>
-                                        <Textarea
-                                            placeholder="Tell us about your project..."
-                                            className="min-h-[160px] bg-slate-50 border-2 rounded-3xl p-6 text-lg"
-                                            value={formData.description}
-                                            onChange={(e) => handleChange("description", e.target.value)}
-                                            required
-                                        />
-                                        <div className="flex gap-4">
-                                            <Button type="button" variant="ghost" onClick={() => setStep(1)} className="h-16 flex-1 font-bold">Back</Button>
-                                            <Button type="submit" disabled={isSubmitting} className="h-16 flex-[2] bg-blue-950 text-white rounded-2xl text-xl font-black italic">
-                                                {isSubmitting ? <Loader2 className="animate-spin" /> : "LAUNCH"}
+                                        <div className="space-y-2">
+                                            <Label className="text-xs font-bold uppercase tracking-widest text-slate-600">Project Details</Label>
+                                            <Textarea
+                                                placeholder="Tell us about your project vision, features, and goals..."
+                                                className="min-h-[140px] bg-white border border-slate-200 focus:border-teal-500 focus:ring-teal-500/20 rounded-2xl p-6 text-base shadow-sm transition-all resize-none"
+                                                value={formData.description}
+                                                onChange={(e) => handleChange("description", e.target.value)}
+                                                required
+                                            />
+                                        </div>
+                                        <div className="flex gap-3 pt-2">
+                                            <Button type="button" variant="outline" onClick={() => setStep(1)} className="h-14 px-6 font-bold rounded-2xl border-slate-200 text-slate-600 hover:bg-slate-50 transition-all">Back</Button>
+                                            <Button type="submit" disabled={isSubmitting} className="h-14 flex-1 bg-gradient-to-r from-teal-500 to-blue-600 hover:from-teal-400 hover:to-blue-500 text-white rounded-2xl text-lg font-bold shadow-md hover:shadow-lg hover:scale-[1.02] transition-all">
+                                                {isSubmitting ? <Loader2 className="animate-spin" /> : "Submit Inquiry"}
                                             </Button>
                                         </div>
                                     </div>

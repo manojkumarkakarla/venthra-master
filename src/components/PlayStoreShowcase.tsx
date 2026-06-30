@@ -126,32 +126,7 @@ const PlayStoreShowcase = () => {
 
                     {/* Apple App Store Ecosystem */}
                     <div className="w-full relative group bg-white dark:bg-slate-900/80 border border-slate-200/50 dark:border-slate-800 p-8 sm:p-10 rounded-[3rem] shadow-[0_15px_40px_-15px_rgba(0,0,0,0.1)] overflow-hidden cursor-pointer hover:shadow-[0_20px_50px_-20px_rgba(0,0,0,0.2)] transition-shadow duration-300">
-                        {/* Dramatic frosted glass overlay for normal state */}
-                        <div className="absolute inset-0 bg-slate-50/50 dark:bg-slate-950/40 z-10 pointer-events-none transition-all duration-300 group-hover:opacity-0" />
-
-                        {/* Theatre Reveal Effect for "IN PROGRESS" */}
-                        <div className="absolute inset-0 z-40 pointer-events-none flex flex-col items-center justify-center overflow-hidden rounded-[3rem]">
-                            {/* Darken Background on Hover */}
-                            <div className="absolute inset-0 bg-slate-900/80 dark:bg-black/80 opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
-
-                            {/* Left Theatre Curtain */}
-                            <div className="absolute top-0 left-0 w-1/2 h-full bg-slate-800 dark:bg-slate-950 border-r border-white/10 -translate-x-full group-hover:translate-x-0 transition-transform duration-300 shadow-md z-40" />
-
-                            {/* Right Theatre Curtain */}
-                            <div className="absolute top-0 right-0 w-1/2 h-full bg-slate-800 dark:bg-slate-950 border-l border-white/10 translate-x-full group-hover:translate-x-0 transition-transform duration-300 shadow-md z-40" />
-
-                            {/* The "IN PROGRESS" Text that reveals as curtains close */}
-                            <div className="relative z-50 opacity-0 group-hover:opacity-100 transition-all duration-300 flex flex-col items-center">
-                                <h2 className="text-4xl md:text-6xl font-black text-white tracking-[0.2em]">
-                                    IN PROGRESS
-                                </h2>
-                                <div className="mt-4 flex gap-2">
-                                    <div className="w-2 h-2 rounded-full bg-teal-400" />
-                                    <div className="w-2 h-2 rounded-full bg-teal-400" />
-                                    <div className="w-2 h-2 rounded-full bg-teal-400" />
-                                </div>
-                            </div>
-                        </div>
+                        {/* Overlay removed per user request */}
 
                         <div className="relative z-20 flex flex-col h-full opacity-90 transition-all duration-300">
 

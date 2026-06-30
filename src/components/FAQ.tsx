@@ -50,8 +50,8 @@ const FAQ = () => {
                     <h2 className="text-4xl md:text-5xl lg:text-6xl font-extrabold text-slate-900 dark:text-white mb-6 tracking-tight leading-tight">
                         Frequently Asked <br className="hidden sm:block" />
                         <span className="relative inline-block mt-2">
-                            <span className="absolute -inset-2 bg-gradient-to-r from-blue-500/20 to-purple-500/20 blur-xl rounded-full animate-pulse" />
-                            <span className="relative text-transparent bg-clip-text bg-gradient-to-r from-blue-600 via-indigo-500 to-purple-600">Questions</span>
+                            <span className="absolute -inset-2 bg-gradient-to-r from-teal-500/20 to-blue-600/20 blur-xl rounded-full animate-pulse" />
+                            <span className="relative text-transparent bg-clip-text bg-gradient-to-r from-teal-500 via-cyan-500 to-blue-600">Questions</span>
                         </span>
                     </h2>
                     <p className="text-lg text-slate-600 dark:text-slate-400 max-w-2xl mx-auto leading-relaxed">
@@ -62,21 +62,21 @@ const FAQ = () => {
                 {/* FAQ Cards */}
                 <div className="relative">
                     {/* Decorative side element */}
-                    <div className="hidden lg:block absolute -left-12 top-10 w-24 h-24 bg-gradient-to-br from-blue-500 to-cyan-400 rounded-3xl -rotate-12 blur-2xl opacity-20 animate-pulse" />
+                    <div className="hidden lg:block absolute -left-12 top-10 w-24 h-24 bg-gradient-to-br from-teal-400 to-blue-500 rounded-3xl -rotate-12 blur-2xl opacity-20 animate-pulse" />
                     
                     <Accordion type="single" collapsible className="w-full space-y-4">
                         {faqs.map((faq, index) => (
                             <AccordionItem
                                 key={index}
                                 value={`item-${index}`}
-                                className="group border border-slate-200/60 dark:border-slate-800 bg-white/95 dark:bg-slate-900/95 rounded-2xl px-6 sm:px-8 py-2 shadow-[0_5px_15px_-5px_rgba(0,0,0,0.05)] hover:shadow-[0_15px_40px_-10px_rgba(59,130,246,0.15)] transition-all duration-300 data-[state=open]:bg-white dark:data-[state=open]:bg-slate-900 data-[state=open]:shadow-lg data-[state=open]:border-blue-200/80 dark:data-[state=open]:border-blue-900/50"
+                                className="group border border-slate-200/60 dark:border-slate-800 bg-white/95 dark:bg-slate-900/95 rounded-2xl px-6 sm:px-8 py-2 shadow-[0_5px_15px_-5px_rgba(0,0,0,0.05)] hover:shadow-[0_15px_40px_-10px_rgba(20,184,166,0.15)] transition-all duration-300 data-[state=open]:bg-white dark:data-[state=open]:bg-slate-900 data-[state=open]:shadow-lg data-[state=open]:border-teal-200/80 dark:data-[state=open]:border-teal-900/50"
                             >
                                 <AccordionTrigger className="hover:no-underline py-4 sm:py-5 text-left transition-all">
                                     <div className="flex items-center gap-4 text-left w-full pr-4">
-                                        <div className="w-8 h-8 rounded-full bg-blue-50 dark:bg-blue-900/30 flex items-center justify-center shrink-0 group-data-[state=open]:bg-blue-500 group-data-[state=open]:text-white text-blue-600 dark:text-blue-400 transition-colors duration-300">
+                                        <div className="w-8 h-8 rounded-full bg-teal-50 dark:bg-teal-900/30 flex items-center justify-center shrink-0 group-data-[state=open]:bg-gradient-to-r group-data-[state=open]:from-teal-400 group-data-[state=open]:to-blue-500 group-data-[state=open]:text-white text-teal-600 dark:text-teal-400 transition-all duration-300">
                                             <span className="font-bold text-sm">{index + 1}</span>
                                         </div>
-                                        <span className="text-lg sm:text-xl font-bold text-slate-900 dark:text-white leading-snug group-data-[state=open]:text-blue-600 dark:group-data-[state=open]:text-blue-400 transition-colors">
+                                        <span className="text-lg sm:text-xl font-bold text-slate-900 dark:text-white leading-snug group-data-[state=open]:text-teal-600 dark:group-data-[state=open]:text-teal-400 transition-colors">
                                             {faq.question}
                                         </span>
                                     </div>

@@ -1,8 +1,8 @@
-import { useState, lazy, Suspense } from "react";
+import { useState, useEffect, lazy, Suspense } from "react";
 import { Link } from "react-router-dom";
 import { ArrowRight, Loader2, Cpu, Code2, Database, Shield, LayoutTemplate, Sparkles } from "lucide-react";
 import { Button } from "@/components/ui/button";
-import Spline from '@splinetool/react-spline';
+import { ThreeHero } from "./ThreeHero";
 
 // Lazy load heavy components
 const ProjectInquiryModal = lazy(() => import("./ProjectInquiryModal"));
@@ -14,6 +14,11 @@ interface HeroProps {
 const Hero = ({ onSearch }: HeroProps) => {
     const [isModalOpen, setIsModalOpen] = useState(false);
     const [isLoading, setIsLoading] = useState(true);
+
+    useEffect(() => {
+        const timer = setTimeout(() => setIsLoading(false), 100);
+        return () => clearTimeout(timer);
+    }, []);
 
     return (
         <section className="relative min-h-[100dvh] w-full flex flex-col overflow-hidden bg-white selection:bg-teal-500/30">
@@ -73,14 +78,9 @@ const Hero = ({ onSearch }: HeroProps) => {
             <div className="relative sm:absolute inset-0 z-0 flex flex-col flex-1 items-center justify-center pointer-events-none">
 
 
-                {/* Spline Canvas - Position absolute to prevent the huge layout blowout from the scaled element */}
-                <div className={`absolute sm:relative top-[46%] sm:top-12 left-1/2 sm:left-0 -translate-x-[45%] sm:translate-x-0 -translate-y-1/2 sm:translate-y-8 lg:translate-x-1/4 xl:translate-x-[30%] w-[300vw] sm:w-full h-[150dvh] sm:h-full scale-[0.40] sm:scale-100 origin-center sm:origin-top transition-opacity duration-1000 ease-in-out z-0 pointer-events-auto flex items-center justify-center ${isLoading ? 'opacity-0' : 'opacity-90'}`}>
-                    <Spline
-                        scene="https://prod.spline.design/Nmx4Vyeze9wJ-9zm/scene.splinecode"
-                        onLoad={() => setIsLoading(false)}
-                    />
-                    {/* Cover the Spline Watermark on mobile */}
-                    <div className="absolute bottom-0 right-0 w-96 h-40 bg-white z-[99] lg:hidden pointer-events-none" />
+                {/* High-Performance WebGL Abstract Hero Graphic */}
+                <div className={`absolute top-[-5vh] sm:top-12 left-0 w-full h-[45vh] sm:h-full lg:translate-y-4 xl:translate-y-6 lg:translate-x-1/4 xl:translate-x-[30%] scale-110 sm:scale-100 origin-center transition-opacity duration-1000 ease-in-out z-0 pointer-events-auto flex items-center justify-center ${isLoading ? 'opacity-0' : 'opacity-100'}`}>
+                    <ThreeHero />
                 </div>
 
                 {/* High Contrast Gradient Overlay to ensure text readability on the left (Desktop only now) */}
@@ -128,15 +128,15 @@ const Hero = ({ onSearch }: HeroProps) => {
                             <ArrowRight className="w-4 h-4 sm:w-5 sm:h-5 group-hover:translate-x-1 transition-transform duration-300" />
                         </Button>
 
-                        <Button
-                            asChild
-                            variant="outline"
-                            className="group w-full sm:w-auto h-12 sm:h-14 px-8 text-sm font-medium rounded-full bg-white text-slate-900 border border-slate-200 hover:border-slate-300 shadow-sm hover:shadow-md transition-all duration-400 flex items-center justify-center gap-2"
+                        <Link 
+                            to="/our-work" 
+                            className="group relative flex items-center justify-center w-full sm:w-auto overflow-hidden rounded-full bg-white dark:bg-slate-900 border-2 border-slate-200 dark:border-slate-800 text-slate-700 dark:text-slate-300 hover:border-transparent dark:hover:border-transparent px-8 h-12 sm:h-14 text-sm sm:text-base font-bold shadow-sm transition-all duration-300 hover:scale-[1.02] hover:shadow-lg uppercase tracking-wider"
                         >
-                            <Link to="/our-work" className="w-full h-full flex items-center justify-center gap-2">
+                            <span className="absolute inset-0 w-full h-full bg-gradient-to-r from-teal-400 to-blue-500 scale-x-0 group-hover:scale-x-100 origin-left transition-transform duration-500 ease-out z-0" />
+                            <span className="relative z-10 transition-colors duration-300 group-hover:text-white flex items-center gap-2">
                                 Explore Our Work
-                            </Link>
-                        </Button>
+                            </span>
+                        </Link>
                     </div>
                 </div>
             </div>

@@ -7,6 +7,7 @@ import Index from "./pages/Index";
 import About from "./pages/About";
 import NotFound from "./pages/NotFound";
 import VTSAssistant from "./components/VTSAssistant";
+import WhatsAppButton from "./components/WhatsAppButton";
 import ScrollToTop from "./components/ScrollToTop";
 import PrivacyPolicyPage from "./pages/PrivacyPolicyPage";
 import TermsOfServicePage from "./pages/TermsOfServicePage";
@@ -26,6 +27,7 @@ const App = () => {
           <InstallPrompt />
           <NotificationPrompt />
           <VTSAssistant />
+          <WhatsAppButton />
           <ScrollToTop />
           <Routes>
             <Route path="/" element={<Index />} />

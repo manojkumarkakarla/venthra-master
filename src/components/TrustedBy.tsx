@@ -2,7 +2,7 @@ import { useState } from 'react';
 import valiHotelLogo from '@/assets/Vali hotel.jpeg';
 import sriKrishnaLogo from '@/assets/sri krishna.jpeg';
 import elShaddaiLogo from '@/assets/El Shaddai.jpeg';
-import skaarviLogo from '@/assets/Skaarvi.png';
+import alisherLogo from '@/assets/Alisher.jpeg';
 import bethamcherlaLogo from '@/assets/Bethamcherla times.jpeg';
 import googleLogo from '@/assets/Google.jpg';
 import playStoreLogo from '@/assets/Play store.jpg';
@@ -12,7 +12,7 @@ const clients = [
   { name: 'Sri Krishna Collections', logo: sriKrishnaLogo, shape: 'circle', fit: 'cover' },
   { name: 'El Shaddai Grace', logo: elShaddaiLogo, shape: 'circle', fit: 'cover' },
   { name: 'Google', logo: googleLogo, shape: 'circle', fit: 'cover' },
-  { name: 'Skaarvi', logo: skaarviLogo, shape: 'circle', fit: 'cover' },
+  { name: 'Alisher', logo: alisherLogo, shape: 'circle', fit: 'cover' },
   { name: 'Bethamcherla Times', logo: bethamcherlaLogo, shape: 'circle', fit: 'cover' },
   { name: 'Playstore', logo: playStoreLogo, shape: 'circle', fit: 'cover' },];
 
