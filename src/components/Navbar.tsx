@@ -51,19 +51,19 @@ const Navbar = () => {
     // Home page uses a light color on the hero section for clear visibility
     textColorClass = "text-slate-800 font-bold tracking-[0.1em] hover:text-teal-600 transition-colors";
     logoColorClass = "bg-gradient-to-r from-teal-600 via-cyan-600 to-blue-700 bg-clip-text text-transparent drop-shadow-sm";
-    navBgClass = "bg-white/90 backdrop-blur-md shadow-sm border-b border-slate-200 transition-all duration-500";
+    navBgClass = "bg-white shadow-sm border-b border-slate-200 transition-all duration-500";
     // buttonClass remains gradient
   } else if (isAboutPage) {
     // About page has a dark hero always
     textColorClass = "text-white hover:text-teal-400";
     logoColorClass = "bg-gradient-to-r from-teal-400 via-cyan-400 to-blue-400 bg-clip-text text-transparent";
-    navBgClass = "bg-gradient-to-b from-black/50 to-transparent backdrop-blur-[2px]";
+    navBgClass = "bg-gradient-to-b from-black/50 to-transparent";
     // buttonClass remains gradient
   } else {
     // Default for other pages (Privacy, Terms, etc.) which usually have light backgrounds
     textColorClass = "text-slate-900 hover:text-teal-600";
     logoColorClass = "bg-gradient-to-r from-teal-600 via-cyan-600 to-blue-700 bg-clip-text text-transparent drop-shadow-sm";
-    navBgClass = "bg-white/80 backdrop-blur-md border-b border-slate-200 support-backdrop-blur:bg-white/90";
+    navBgClass = "bg-white/95 border-b border-slate-200";
   }
 
   return (
@@ -160,7 +160,7 @@ const Navbar = () => {
               "z-[99999] relative", // Maximum priority
               isScrolled
                 ? "bg-slate-900 text-white"
-                : "bg-white/80 text-slate-900 backdrop-blur-md border border-slate-200 shadow-sm"
+                : "bg-white/95 text-slate-900 border border-slate-200 shadow-sm"
             )}
             aria-label="Open Menu"
           >
@@ -176,7 +176,7 @@ const Navbar = () => {
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             exit={{ opacity: 0 }}
-            className="fixed inset-0 w-full h-[100dvh] z-[999999] md:hidden bg-slate-950/95 backdrop-blur-xl flex flex-col items-center justify-center p-6"
+            className="fixed inset-0 w-full h-[100dvh] z-[999999] md:hidden bg-slate-950/98 flex flex-col items-center justify-center p-6"
           >
             {/* Close Button - Top Right */}
             <button

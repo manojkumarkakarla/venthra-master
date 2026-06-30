@@ -27,11 +27,9 @@ const Index = () => {
         <Hero onSearch={handleSearch} />
         <TrustedBy />
         <WebsiteGrid searchQuery={searchQuery} />
-
         <Examples />
         <InteractiveHero />
         <PlayStoreShowcase />
-
         <FAQ />
       </main>
       <Footer />
@@ -40,3 +38,5 @@ const Index = () => {
 };
 
 export default Index;
+
+

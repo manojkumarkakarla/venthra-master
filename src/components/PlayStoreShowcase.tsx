@@ -5,8 +5,7 @@ const PlayStoreShowcase = () => {
         <section className="py-32 relative overflow-hidden bg-[#f8fafc] dark:bg-slate-950">
             {/* Static Background */}
             <div className="absolute inset-0 pointer-events-none overflow-hidden">
-                <div className="absolute -top-40 -left-40 w-[800px] h-[800px] bg-gradient-to-br from-teal-200/40 to-emerald-100/40 dark:from-teal-900/20 dark:to-emerald-900/20 rounded-full blur-[80px] opacity-60" />
-                <div className="absolute top-1/2 -right-40 w-[600px] h-[600px] bg-gradient-to-br from-blue-200/40 to-indigo-100/40 dark:from-blue-900/20 dark:to-indigo-900/20 rounded-full blur-[80px] opacity-60" />
+
 
                 {/* Micro Grid */}
                 <div className="absolute inset-0 opacity-[0.04] dark:opacity-[0.06]" style={{ backgroundImage: 'linear-gradient(#14b8a6 1px, transparent 1px), linear-gradient(90deg, #14b8a6 1px, transparent 1px)', backgroundSize: '40px 40px' }} />

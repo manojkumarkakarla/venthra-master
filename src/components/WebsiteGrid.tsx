@@ -31,8 +31,7 @@ const WebsiteGrid = ({ searchQuery }: WebsiteGridProps) => {
       <div className="absolute inset-0 bg-gradient-to-b from-slate-950 via-slate-900 to-slate-950 z-0" />
 
       {/* Soft Background Glow Blobs for Dark Theme */}
-      <div className="absolute top-1/4 left-[-10%] w-[300px] h-[300px] sm:w-[450px] sm:h-[450px] bg-teal-600/10 rounded-full blur-[100px] pointer-events-none z-0" />
-      <div className="absolute bottom-1/4 right-[-10%] w-[350px] h-[350px] sm:w-[500px] sm:h-[500px] bg-blue-600/10 rounded-full blur-[120px] pointer-events-none z-0" />
+
 
       {/* Background Grid Pattern - Dark */}
       <div className="absolute inset-0 pattern-grid opacity-[0.03] pointer-events-none z-0" />

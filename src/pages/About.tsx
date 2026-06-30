@@ -1,6 +1,7 @@
 import { useEffect, useRef } from 'react';
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
+import TrustedBy from "@/components/TrustedBy";
 import profilePhoto from "@/assets/profile-photo.png";
 import vtsLogo from "@/assets/VTS_NEW_LOGO.png";
 import { ArrowRight, ShoppingBag, Terminal, Layout, ExternalLink, Code2, Database, Globe } from "lucide-react";
@@ -11,7 +12,6 @@ gsap.registerPlugin(ScrollTrigger);
 
 const About = () => {
   const heroSectionRef = useRef(null);
-  const contentRef = useRef(null);
 
   useEffect(() => {
     window.scrollTo(0, 0);
@@ -150,10 +150,7 @@ const About = () => {
         </div>
       </section >
 
-
-
-
-
+      <TrustedBy />
       <Footer />
     </div >
   );

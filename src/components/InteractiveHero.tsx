@@ -37,12 +37,13 @@ const InteractiveHero = () => {
                     trigger: sectionRef.current,
                     start: "top 80%",
                     end: "top 20%",
-                    toggleActions: "play none none reverse"
+                    once: true // Only animate once to save scroll performance
                 },
                 scale: 0.5,
                 opacity: 0,
                 duration: 1.5,
-                ease: "back.out(1.7)"
+                ease: "back.out(1.7)",
+                force3D: true // Force GPU acceleration
             });
 
             // Icon entry animations from left and right
@@ -56,13 +57,14 @@ const InteractiveHero = () => {
                     scrollTrigger: {
                         trigger: sectionRef.current,
                         start: "top 70%",
-                        toggleActions: "play none none reverse"
+                        once: true
                     },
                     opacity: 0,
                     scale: 0.8,
                     duration: 0.5, // Faster duration
                     delay: index * 0.1, // Reduced delay
-                    ease: "power2.out"
+                    ease: "power2.out",
+                    force3D: true // Force GPU acceleration
                 });
             });
 
@@ -71,7 +73,8 @@ const InteractiveHero = () => {
                 rotation: 360,
                 duration: 40,
                 repeat: -1,
-                ease: "none"
+                ease: "none",
+                force3D: true
             });
 
             // Counter-rotate the icons to keep them upright
@@ -81,7 +84,8 @@ const InteractiveHero = () => {
                     rotation: -360,
                     duration: 40,
                     repeat: -1,
-                    ease: "none"
+                    ease: "none",
+                    force3D: true
                 });
             });
 
@@ -151,12 +155,9 @@ const InteractiveHero = () => {
                 <div className="flex flex-col items-center justify-center">
                     {/* Heading */}
                     <div className="relative text-center space-y-6 px-4 mb-16 sm:mb-20 z-10 animate-fade-up">
-                        {/* Animated Glow Behind Text */}
-                        <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-3/4 h-32 bg-teal-500/20 blur-[100px] rounded-full pointer-events-none" />
-
                         <h2 className="relative text-4xl sm:text-5xl md:text-6xl lg:text-[5rem] font-['Georgia'] font-bold text-white leading-[1.1] tracking-tight">
                             Empowering Your <br className="hidden sm:block" />
-                            <span className="inline-block mt-2 sm:mt-4 text-transparent bg-clip-text bg-gradient-to-r from-teal-400 via-cyan-400 to-blue-500 drop-shadow-[0_0_30px_rgba(20,184,166,0.6)]">
+                            <span className="inline-block mt-2 sm:mt-4 text-transparent bg-clip-text bg-gradient-to-r from-teal-400 via-cyan-400 to-blue-500">
                                 Digital Ecosystem
                             </span>
                         </h2>
@@ -172,7 +173,7 @@ const InteractiveHero = () => {
                         <div className="absolute inset-12 sm:inset-20 rounded-full border border-slate-700/50 border-dashed" />
                         <div className="absolute inset-24 sm:inset-36 rounded-full border border-slate-800/40" />
 
-                        <div ref={orbitRef} className="absolute inset-0">
+                        <div ref={orbitRef} className="absolute inset-0 will-change-transform">
 
                             {/* Orbiting web app icons */}
                             {webApps.map((app, index) => {
@@ -191,24 +192,24 @@ const InteractiveHero = () => {
                                             transform: 'translate(-50%, -50%)'
                                         }}
                                     >
-                                        <div ref={(el) => (iconsRef.current[index] = el)}>
+                                        <div ref={(el) => (iconsRef.current[index] = el)} className="will-change-transform">
                                             <div className={`
                                                   relative group w-14 h-14 sm:w-20 sm:h-20 md:w-24 md:h-24
                                                   rounded-2xl bg-gradient-to-br ${app.color}
                                                   flex items-center justify-center
                                                   transition-all duration-300
-                                                  hover:scale-110 hover:shadow-2xl hover:shadow-teal-500/20
+                                                  hover:scale-110
                                                   cursor-pointer
-                                                  border border-white/10 backdrop-blur-md
+                                                  border border-white/10
                                                 `}>
                                                 {/* Icon */}
-                                                <span className="flex items-center justify-center filter drop-shadow-lg text-white w-full h-full">
+                                                <span className="flex items-center justify-center text-white w-full h-full">
                                                     {app.icon}
                                                 </span>
 
                                                 {/* Text Label */}
                                                 <div className="absolute -bottom-8 sm:-bottom-10 left-1/2 -translate-x-1/2 transition-opacity duration-300 pointer-events-none">
-                                                    <div className="bg-slate-900/80 backdrop-blur-sm border border-white/10 text-white px-3 py-1 rounded-lg text-[10px] sm:text-xs font-semibold whitespace-nowrap shadow-lg">
+                                                    <div className="bg-slate-900/80 border border-white/10 text-white px-3 py-1 rounded-lg text-[10px] sm:text-xs font-semibold whitespace-nowrap shadow-sm">
                                                         {app.name}
                                                     </div>
                                                 </div>
@@ -224,16 +225,12 @@ const InteractiveHero = () => {
                             ref={logoRef}
                             className="relative z-20 group cursor-pointer"
                         >
-                            {/* Outer glowing ring */}
-                            <div className="absolute inset-0 -m-8 sm:-m-12 md:-m-16 rounded-full bg-gradient-to-r from-teal-500 via-blue-500 to-cyan-500 opacity-30 blur-[40px] group-hover:opacity-60 transition-opacity duration-700" />
-
                             {/* Middle rings */}
                             <div className="absolute inset-0 -m-4 sm:-m-8 rounded-full border border-teal-500/30" />
                             <div className="absolute inset-0 -m-2 sm:-m-4 rounded-full border-2 border-dashed border-blue-500/30" />
 
                             {/* Logo container */}
-                            <div className="relative w-32 h-32 sm:w-44 sm:h-44 md:w-52 md:h-52 rounded-full bg-white border-4 border-teal-500/30 shadow-[0_0_50px_rgba(20,184,166,0.3)] group-hover:shadow-[0_0_80px_rgba(20,184,166,0.5)] transition-all duration-700 flex items-center justify-center overflow-hidden">
-
+                            <div className="relative w-32 h-32 sm:w-44 sm:h-44 md:w-52 md:h-52 rounded-full bg-white border-4 border-teal-500/30 transition-all duration-700 flex items-center justify-center overflow-hidden">
                                 {/* VTS Image Logo */}
                                 <div className="relative z-10 w-full h-full flex items-center justify-center p-2">
                                     <img
@@ -246,9 +243,9 @@ const InteractiveHero = () => {
 
                             {/* Static outer particles */}
                             <div className="absolute inset-0 -m-6">
-                                <div className="absolute top-0 left-1/2 w-3 h-3 bg-teal-400 rounded-full shadow-[0_0_15px_#2dd4bf]" />
-                                <div className="absolute bottom-0 left-1/2 w-3 h-3 bg-blue-400 rounded-full shadow-[0_0_15px_#60a5fa]" />
-                                <div className="absolute top-1/2 left-0 w-2 h-2 bg-cyan-400 rounded-full shadow-[0_0_10px_#22d3ee]" />
+                                <div className="absolute top-0 left-1/2 w-3 h-3 bg-teal-400 rounded-full" />
+                                <div className="absolute bottom-0 left-1/2 w-3 h-3 bg-blue-400 rounded-full" />
+                                <div className="absolute top-1/2 left-0 w-2 h-2 bg-cyan-400 rounded-full" />
                             </div>
                         </div>
                     </div>

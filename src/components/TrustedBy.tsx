@@ -19,8 +19,13 @@ const clients = [
 const TrustedBy = () => {
   return (
     <section className="py-8 bg-white overflow-hidden">
-      <div className="container mx-auto px-4 text-center mb-6">
-        <p className="text-sm font-bold tracking-[0.2em] text-slate-400 uppercase">Trusted By</p>
+      <div className="container mx-auto px-4 text-center mb-10">
+        <div className="flex flex-col items-center justify-center w-full">
+          <h2 className="text-4xl sm:text-5xl md:text-6xl font-['Georgia'] font-extrabold tracking-tight text-transparent bg-clip-text bg-gradient-to-r from-teal-600 via-cyan-600 to-blue-700 mb-4 pb-1">
+            Trusted By
+          </h2>
+          <div className="h-1 w-24 bg-gradient-to-r from-teal-500 to-blue-600 rounded-full" />
+        </div>
       </div>
 
       {/* Infinite Marquee */}
@@ -29,10 +34,10 @@ const TrustedBy = () => {
         <div className="absolute inset-y-0 left-0 w-8 sm:w-32 bg-gradient-to-r from-white to-transparent z-10 pointer-events-none" />
         <div className="absolute inset-y-0 right-0 w-8 sm:w-32 bg-gradient-to-l from-white to-transparent z-10 pointer-events-none" />
 
-        <div className="animate-marquee flex whitespace-nowrap items-center gap-8 sm:gap-24 px-4 sm:px-8 will-change-transform">
-          {/* Duplicate the list 3 times to ensure infinite scroll covers large screens seamlessly */}
-          {[...clients, ...clients, ...clients].map((client, i) => (
-            <div key={i} className="flex items-center justify-center min-w-max">
+        {/* Removed gap here and added padding to items to ensure the -50% translation math is absolutely perfect without missing a trailing gap */}
+        <div className="animate-marquee flex whitespace-nowrap items-center will-change-transform">
+          {[...clients, ...clients, ...clients, ...clients].map((client, i) => (
+            <div key={i} className="flex items-center justify-center min-w-max px-4 sm:px-12">
               <ClientLogo client={client} />
             </div>
           ))}
@@ -55,7 +60,7 @@ const ClientLogo = ({ client }: { client: { name: string; logo: string; shape: s
   imgClass += client.fit === 'cover' ? "object-cover" : "object-contain p-2 sm:p-4";
 
   return (
-    <div className={`relative bg-white shadow-[0_4px_20px_rgba(0,0,0,0.06)] border border-slate-100 overflow-hidden hover:shadow-[0_8px_30px_rgba(20,184,166,0.15)] hover:border-teal-200 transition-all duration-500 flex items-center justify-center cursor-pointer ${sizeClass} ${shapeClass}`}>
+    <div className={`relative bg-white border border-slate-200 overflow-hidden hover:border-teal-300 transition-colors duration-300 flex items-center justify-center cursor-pointer ${sizeClass} ${shapeClass}`}>
       {!hasError ? (
         <img
           src={client.logo}
@@ -73,3 +78,4 @@ const ClientLogo = ({ client }: { client: { name: string; logo: string; shape: s
 };
 
 export default TrustedBy;
+

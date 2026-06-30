@@ -32,8 +32,7 @@ const Footer = () => {
     <footer className="relative bg-slate-950 text-slate-300 overflow-hidden border-t border-slate-900">
       {/* Background Ambience */}
       <div className="absolute inset-0 pointer-events-none overflow-hidden">
-        <div className="absolute -top-[50%] -left-[10%] w-[50%] h-[100%] bg-blue-600/10 rounded-full blur-[120px]" />
-        <div className="absolute top-[20%] right-[-10%] w-[40%] h-[80%] bg-purple-600/10 rounded-full blur-[120px]" />
+
       </div>
 
       <div className="container relative z-10 mx-auto px-4 sm:px-6 lg:px-8 pt-12 pb-6">

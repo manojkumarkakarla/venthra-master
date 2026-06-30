@@ -4,7 +4,7 @@ import { ArrowRight, Loader2, Cpu, Code2, Database, Shield, LayoutTemplate, Spar
 import { Button } from "@/components/ui/button";
 import Spline from '@splinetool/react-spline';
 
-// Lazy load modal
+// Lazy load heavy components
 const ProjectInquiryModal = lazy(() => import("./ProjectInquiryModal"));
 
 interface HeroProps {
@@ -33,8 +33,7 @@ const Hero = ({ onSearch }: HeroProps) => {
                 />
 
                 {/* Ambient Soft Pastel Glows */}
-                <div className="absolute top-[-10%] left-[-10%] w-[50vw] h-[50vw] rounded-full bg-teal-100/40 blur-[100px] pointer-events-none" />
-                <div className="absolute bottom-[-10%] right-[-10%] w-[50vw] h-[50vw] rounded-full bg-blue-100/40 blur-[120px] pointer-events-none" />
+
 
                 {/* Floating Tech Symbols (Subtle Watermarks) */}
                 <div className="absolute top-[15%] left-[5%] text-slate-300/80 rotate-12 animate-pulse">
@@ -75,7 +74,7 @@ const Hero = ({ onSearch }: HeroProps) => {
 
 
                 {/* Spline Canvas - Position absolute to prevent the huge layout blowout from the scaled element */}
-                <div className="absolute sm:relative top-[46%] sm:top-12 left-1/2 sm:left-0 -translate-x-[45%] sm:translate-x-0 -translate-y-1/2 sm:translate-y-8 lg:translate-x-1/4 xl:translate-x-[30%] w-[300vw] sm:w-full h-[150dvh] sm:h-full scale-[0.40] sm:scale-100 origin-center sm:origin-top opacity-90 transition-all duration-1000 ease-in-out z-0 pointer-events-auto flex items-center justify-center">
+                <div className={`absolute sm:relative top-[46%] sm:top-12 left-1/2 sm:left-0 -translate-x-[45%] sm:translate-x-0 -translate-y-1/2 sm:translate-y-8 lg:translate-x-1/4 xl:translate-x-[30%] w-[300vw] sm:w-full h-[150dvh] sm:h-full scale-[0.40] sm:scale-100 origin-center sm:origin-top transition-opacity duration-1000 ease-in-out z-0 pointer-events-auto flex items-center justify-center ${isLoading ? 'opacity-0' : 'opacity-90'}`}>
                     <Spline
                         scene="https://prod.spline.design/Nmx4Vyeze9wJ-9zm/scene.splinecode"
                         onLoad={() => setIsLoading(false)}
@@ -90,7 +89,7 @@ const Hero = ({ onSearch }: HeroProps) => {
 
             {/* --- Main Content --- */}
             <div className="relative z-10 w-full max-w-7xl mx-auto px-6 sm:px-10 lg:px-16 flex flex-col justify-end lg:justify-center pointer-events-none pb-12 lg:pb-0 pt-4 sm:pt-28 lg:pt-0 sm:h-full sm:flex-1">
-                <div className="max-w-2xl pointer-events-auto bg-transparent sm:bg-white/80 lg:bg-transparent backdrop-blur-none sm:backdrop-blur-xl lg:backdrop-blur-none px-2 sm:px-10 py-2 sm:py-10 rounded-[2rem] sm:rounded-[2.5rem] border-transparent sm:border sm:border-white lg:border-transparent shadow-none sm:shadow-[0_8px_30px_rgb(0,0,0,0.06)] lg:shadow-none mt-auto lg:mt-0 text-center sm:text-left">
+                <div className="max-w-2xl pointer-events-auto bg-transparent sm:bg-white/95 lg:bg-transparent px-2 sm:px-10 py-2 sm:py-10 rounded-[2rem] sm:rounded-[2.5rem] border-transparent sm:border sm:border-white lg:border-transparent shadow-none sm:shadow-[0_8px_30px_rgb(0,0,0,0.06)] lg:shadow-none mt-auto lg:mt-0 text-center sm:text-left">
                     {/* Badge */}
                     <div className="hidden sm:block mb-8 lg:mt-12 xl:mt-16">
                         <span className="inline-flex items-center gap-2 text-transparent bg-clip-text bg-gradient-to-r from-teal-600 to-blue-700 text-xs sm:text-sm font-bold tracking-[0.25em] uppercase bg-slate-50 px-5 py-2 rounded-full border border-teal-100 shadow-sm">

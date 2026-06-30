@@ -1,6 +1,7 @@
 import { useState, useRef, MouseEvent } from "react";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
+import TrustedBy from "@/components/TrustedBy";
 import { ExternalLink, Rocket, Gem, Sparkles, Zap, ChevronLeft, ChevronRight, Globe, Code2 } from "lucide-react";
 import { Button } from "@/components/ui/button";
 
@@ -35,7 +36,7 @@ const ProjectGallery = ({ images, alt, imageFit = "cover" }: { images: string[],
         e.stopPropagation();
         setCurrentIndex((prev) => (prev + 1) % images.length);
     };
-    
+
     const prevImage = (e: React.MouseEvent) => {
         e.stopPropagation();
         setCurrentIndex((prev) => (prev - 1 + images.length) % images.length);
@@ -61,7 +62,7 @@ const ProjectGallery = ({ images, alt, imageFit = "cover" }: { images: string[],
 
     return (
         <div className="group w-full perspective-1000">
-            <div 
+            <div
                 ref={cardRef}
                 onMouseMove={handleMouseMove}
                 onMouseLeave={handleMouseLeave}
@@ -70,7 +71,7 @@ const ProjectGallery = ({ images, alt, imageFit = "cover" }: { images: string[],
             >
                 {/* 3D Floating Glass overlay */}
                 <div className="absolute inset-0 bg-gradient-to-tr from-white/10 via-transparent to-white/30 dark:from-white/5 dark:to-white/10 z-20 pointer-events-none rounded-[2rem]" />
-                
+
                 {/* Browser Header */}
                 <div className="relative z-30 flex items-center gap-2 px-6 py-4 bg-white/50 dark:bg-slate-950/50 border-b border-white/20 dark:border-slate-800/50 backdrop-blur-xl">
                     <div className="flex gap-2">
@@ -233,14 +234,14 @@ const OurWorkPage = () => {
                 <div className="absolute bottom-[-20%] left-[20%] w-[60vw] h-[60vw] bg-purple-400/20 dark:bg-purple-600/10 blur-[150px] rounded-full mix-blend-multiply dark:mix-blend-screen animate-[blob_20s_infinite_alternate]" />
 
                 {/* Animated Moving Grid */}
-                <div 
-                    className="absolute inset-0 opacity-[0.03] dark:opacity-[0.07]" 
-                    style={{ 
-                        backgroundImage: 'linear-gradient(to right, #8882 1px, transparent 1px), linear-gradient(to bottom, #8882 1px, transparent 1px)', 
+                <div
+                    className="absolute inset-0 opacity-[0.03] dark:opacity-[0.07]"
+                    style={{
+                        backgroundImage: 'linear-gradient(to right, #8882 1px, transparent 1px), linear-gradient(to bottom, #8882 1px, transparent 1px)',
                         backgroundSize: '40px 40px',
                         maskImage: 'radial-gradient(ellipse at center, black 40%, transparent 80%)',
                         WebkitMaskImage: 'radial-gradient(ellipse at center, black 40%, transparent 80%)'
-                    }} 
+                    }}
                 />
             </div>
 
@@ -248,127 +249,128 @@ const OurWorkPage = () => {
                 <Navbar />
 
                 <main className="pb-32">
-                {/* Immersive Hero Section */}
-                <section className="relative min-h-[70vh] flex items-center justify-center pt-24">
-                    <div className="container relative z-10 mx-auto px-4 sm:px-6 text-center">
-                        <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-white/60 dark:bg-slate-900/60 backdrop-blur-md border border-slate-200/50 dark:border-slate-700/50 shadow-lg mb-8 animate-fade-up">
-                            <Sparkles className="w-4 h-4 text-blue-500" />
-                            <span className="text-sm font-bold uppercase tracking-widest text-slate-800 dark:text-slate-200">Venthra Portfolio</span>
+                    {/* Immersive Hero Section */}
+                    <section className="relative min-h-[70vh] flex items-center justify-center pt-24">
+                        <div className="container relative z-10 mx-auto px-4 sm:px-6 text-center">
+                            <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-white/60 dark:bg-slate-900/60 backdrop-blur-md border border-slate-200/50 dark:border-slate-700/50 shadow-lg mb-8 animate-fade-up">
+                                <Sparkles className="w-4 h-4 text-blue-500" />
+                                <span className="text-sm font-bold uppercase tracking-widest text-slate-800 dark:text-slate-200">Venthra Portfolio</span>
+                            </div>
+
+                            <h1 className="text-5xl md:text-7xl lg:text-8xl font-black text-slate-900 dark:text-white tracking-tighter leading-[1.1] mb-8 animate-fade-up" style={{ animationDelay: '100ms' }}>
+                                Our <br className="md:hidden" />
+                                <span className="relative inline-block">
+                                    <span className="absolute -inset-2 bg-gradient-to-r from-blue-500/20 via-purple-500/20 to-cyan-500/20 blur-2xl rounded-full" />
+                                    <span className="relative text-transparent bg-clip-text bg-gradient-to-r from-blue-600 via-purple-600 to-cyan-500">Masterpieces</span>
+                                </span>
+                            </h1>
+
+                            <p className="text-lg md:text-2xl text-slate-600 dark:text-slate-400 max-w-3xl mx-auto font-medium leading-relaxed animate-fade-up" style={{ animationDelay: '200ms' }}>
+                                We don't just write code; we build digital foundations. Discover how we've transformed visions into high-performance realities.
+                            </p>
                         </div>
-                        
-                        <h1 className="text-5xl md:text-7xl lg:text-8xl font-black text-slate-900 dark:text-white tracking-tighter leading-[1.1] mb-8 animate-fade-up" style={{ animationDelay: '100ms' }}>
-                            Our <br className="md:hidden" />
-                            <span className="relative inline-block">
-                                <span className="absolute -inset-2 bg-gradient-to-r from-blue-500/20 via-purple-500/20 to-cyan-500/20 blur-2xl rounded-full" />
-                                <span className="relative text-transparent bg-clip-text bg-gradient-to-r from-blue-600 via-purple-600 to-cyan-500">Masterpieces</span>
-                            </span>
-                        </h1>
-                        
-                        <p className="text-lg md:text-2xl text-slate-600 dark:text-slate-400 max-w-3xl mx-auto font-medium leading-relaxed animate-fade-up" style={{ animationDelay: '200ms' }}>
-                            We don't just write code; we build digital foundations. Discover how we've transformed visions into high-performance realities.
-                        </p>
-                    </div>
-                </section>
+                    </section>
 
-                {/* Sticky Stacking Projects Layout */}
-                <section className="relative px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto pb-20">
-                    <div className="space-y-12 sm:space-y-24">
-                        {projects.map((project, index) => {
-                            const colors = getThemeColors(project.theme);
-                            const stickyTop = `calc(6rem + ${index * 2}rem)`;
-                            
-                            // Alternate layout logic
-                            const isEven = index % 2 !== 0; 
-                            const gridCols = isEven ? "lg:grid-cols-[1.2fr,1fr]" : "lg:grid-cols-[1fr,1.2fr]";
-                            const contentOrder = isEven ? "order-2 lg:order-2" : "order-2 lg:order-1";
-                            const visualOrder = isEven ? "order-1 lg:order-1" : "order-1 lg:order-2";
-                            const numberPosition = isEven ? "-right-4 sm:-right-10" : "-left-4 sm:-left-10";
-                            
-                            return (
-                                <div 
-                                    key={project.id}
-                                    className="sticky z-10 w-full rounded-[2.5rem] sm:rounded-[3rem] bg-white/80 dark:bg-slate-900/80 backdrop-blur-3xl border border-white dark:border-slate-800 shadow-[0_30px_60px_-15px_rgba(0,0,0,0.1)] dark:shadow-[0_30px_60px_-15px_rgba(0,0,0,0.5)] overflow-hidden transition-all duration-700"
-                                    style={{ top: stickyTop }}
-                                >
-                                    {/* Giant Background Number */}
-                                    <div className={`absolute -top-10 ${numberPosition} text-[15rem] sm:text-[20rem] font-black text-slate-900/[0.04] dark:text-white/[0.03] pointer-events-none select-none leading-none z-0 transition-all`}>
-                                        {project.id}
-                                    </div>
-                                    
-                                    {/* Theme Gradient Glow inside card */}
-                                    <div className="absolute top-0 left-0 w-full h-2 bg-gradient-to-r from-transparent via-current to-transparent opacity-20" style={{ color: `var(--${project.theme}-500)` }} />
+                    {/* Sticky Stacking Projects Layout */}
+                    <section className="relative px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto pb-20">
+                        <div className="space-y-12 sm:space-y-24">
+                            {projects.map((project, index) => {
+                                const colors = getThemeColors(project.theme);
+                                const stickyTop = `calc(6rem + ${index * 2}rem)`;
 
-                                    <div className={`grid ${gridCols} gap-8 lg:gap-12 p-6 sm:p-8 lg:p-12 relative z-10 items-center`}>
-                                        
-                                        {/* Content Side */}
-                                        <div className={`flex flex-col justify-center ${contentOrder} space-y-6`}>
-                                            <div className="space-y-3">
-                                                <div className={`inline-flex items-center gap-2 ${colors.text} font-bold tracking-widest uppercase text-[10px] sm:text-xs`}>
-                                                    <Rocket className="w-3 h-3" />
-                                                    <span>{project.category}</span>
+                                // Alternate layout logic
+                                const isEven = index % 2 !== 0;
+                                const gridCols = isEven ? "lg:grid-cols-[1.2fr,1fr]" : "lg:grid-cols-[1fr,1.2fr]";
+                                const contentOrder = isEven ? "order-2 lg:order-2" : "order-2 lg:order-1";
+                                const visualOrder = isEven ? "order-1 lg:order-1" : "order-1 lg:order-2";
+                                const numberPosition = isEven ? "-right-4 sm:-right-10" : "-left-4 sm:-left-10";
+
+                                return (
+                                    <div
+                                        key={project.id}
+                                        className="sticky z-10 w-full rounded-[2.5rem] sm:rounded-[3rem] bg-white/80 dark:bg-slate-900/80 backdrop-blur-3xl border border-white dark:border-slate-800 shadow-[0_30px_60px_-15px_rgba(0,0,0,0.1)] dark:shadow-[0_30px_60px_-15px_rgba(0,0,0,0.5)] overflow-hidden transition-all duration-700"
+                                        style={{ top: stickyTop }}
+                                    >
+                                        {/* Giant Background Number */}
+                                        <div className={`absolute -top-10 ${numberPosition} text-[15rem] sm:text-[20rem] font-black text-slate-900/[0.04] dark:text-white/[0.03] pointer-events-none select-none leading-none z-0 transition-all`}>
+                                            {project.id}
+                                        </div>
+
+                                        {/* Theme Gradient Glow inside card */}
+                                        <div className="absolute top-0 left-0 w-full h-2 bg-gradient-to-r from-transparent via-current to-transparent opacity-20" style={{ color: `var(--${project.theme}-500)` }} />
+
+                                        <div className={`grid ${gridCols} gap-8 lg:gap-12 p-6 sm:p-8 lg:p-12 relative z-10 items-center`}>
+
+                                            {/* Content Side */}
+                                            <div className={`flex flex-col justify-center ${contentOrder} space-y-6`}>
+                                                <div className="space-y-3">
+                                                    <div className={`inline-flex items-center gap-2 ${colors.text} font-bold tracking-widest uppercase text-[10px] sm:text-xs`}>
+                                                        <Rocket className="w-3 h-3" />
+                                                        <span>{project.category}</span>
+                                                    </div>
+                                                    <h2 className="text-3xl sm:text-4xl lg:text-5xl font-black text-slate-900 dark:text-white leading-[1.1] tracking-tight">
+                                                        {project.title}
+                                                    </h2>
+                                                    <h3 className={`text-lg sm:text-xl font-semibold ${colors.text} opacity-80`}>
+                                                        {project.subtitle}
+                                                    </h3>
                                                 </div>
-                                                <h2 className="text-3xl sm:text-4xl lg:text-5xl font-black text-slate-900 dark:text-white leading-[1.1] tracking-tight">
-                                                    {project.title}
-                                                </h2>
-                                                <h3 className={`text-lg sm:text-xl font-semibold ${colors.text} opacity-80`}>
-                                                    {project.subtitle}
-                                                </h3>
-                                            </div>
 
-                                            <p className="text-slate-600 dark:text-slate-300 text-sm sm:text-base leading-relaxed font-medium">
-                                                {project.description}
-                                            </p>
+                                                <p className="text-slate-600 dark:text-slate-300 text-sm sm:text-base leading-relaxed font-medium">
+                                                    {project.description}
+                                                </p>
 
-                                            {/* Tech Stack */}
-                                            <div className="flex flex-wrap gap-2">
-                                                {project.tech.map((tech) => (
-                                                    <span key={tech} className={`px-3 py-1 text-[10px] sm:text-xs font-bold ${colors.pill} rounded-full border ${colors.border}`}>
-                                                        {tech}
-                                                    </span>
-                                                ))}
-                                            </div>
-
-                                            {/* Highlights */}
-                                            <div className="space-y-3 pt-4 border-t border-slate-200 dark:border-slate-800">
-                                                <ul className="grid gap-2 text-xs sm:text-sm font-medium text-slate-700 dark:text-slate-300">
-                                                    {project.highlights.map((text, i) => (
-                                                        <li key={i} className="flex items-center gap-3">
-                                                            <div className={`w-1.5 h-1.5 rounded-full ${colors.bg} shadow-[0_0_8px_currentColor]`} />
-                                                            {text}
-                                                        </li>
+                                                {/* Tech Stack */}
+                                                <div className="flex flex-wrap gap-2">
+                                                    {project.tech.map((tech) => (
+                                                        <span key={tech} className={`px-3 py-1 text-[10px] sm:text-xs font-bold ${colors.pill} rounded-full border ${colors.border}`}>
+                                                            {tech}
+                                                        </span>
                                                     ))}
-                                                </ul>
+                                                </div>
+
+                                                {/* Highlights */}
+                                                <div className="space-y-3 pt-4 border-t border-slate-200 dark:border-slate-800">
+                                                    <ul className="grid gap-2 text-xs sm:text-sm font-medium text-slate-700 dark:text-slate-300">
+                                                        {project.highlights.map((text, i) => (
+                                                            <li key={i} className="flex items-center gap-3">
+                                                                <div className={`w-1.5 h-1.5 rounded-full ${colors.bg} shadow-[0_0_8px_currentColor]`} />
+                                                                {text}
+                                                            </li>
+                                                        ))}
+                                                    </ul>
+                                                </div>
+
+                                                <div className="pt-2">
+                                                    <Button asChild className={`rounded-full ${colors.bg} hover:opacity-90 text-white px-6 h-10 sm:h-12 text-sm font-bold shadow-xl transition-all hover:scale-105 hover:shadow-[0_10px_30px_-10px_currentColor]`}>
+                                                        <a href={project.link} target="_blank" rel="noopener noreferrer" className="gap-2 flex items-center justify-center w-max">
+                                                            Explore Project <ExternalLink className="w-4 h-4" />
+                                                        </a>
+                                                    </Button>
+                                                </div>
                                             </div>
 
-                                            <div className="pt-2">
-                                                <Button asChild className={`rounded-full ${colors.bg} hover:opacity-90 text-white px-6 h-10 sm:h-12 text-sm font-bold shadow-xl transition-all hover:scale-105 hover:shadow-[0_10px_30px_-10px_currentColor]`}>
-                                                    <a href={project.link} target="_blank" rel="noopener noreferrer" className="gap-2 flex items-center justify-center w-max">
-                                                        Explore Project <ExternalLink className="w-4 h-4" />
-                                                    </a>
-                                                </Button>
+                                            {/* Visual Side */}
+                                            <div className={`relative ${visualOrder}`}>
+                                                {/* Glow behind gallery */}
+                                                <div className={`absolute inset-0 ${colors.bg} opacity-10 blur-[100px] rounded-full mix-blend-screen`} />
+                                                <ProjectGallery
+                                                    images={project.images}
+                                                    alt={project.title}
+                                                    imageFit={project.imageFit}
+                                                />
                                             </div>
-                                        </div>
 
-                                        {/* Visual Side */}
-                                        <div className={`relative ${visualOrder}`}>
-                                            {/* Glow behind gallery */}
-                                            <div className={`absolute inset-0 ${colors.bg} opacity-10 blur-[100px] rounded-full mix-blend-screen`} />
-                                            <ProjectGallery
-                                                images={project.images}
-                                                alt={project.title}
-                                                imageFit={project.imageFit}
-                                            />
                                         </div>
-
                                     </div>
-                                </div>
-                            );
-                        })}
-                    </div>
-                </section>
-            </main>
+                                );
+                            })}
+                        </div>
+                    </section>
+                </main>
 
-            <Footer />
+                <TrustedBy />
+                <Footer />
             </div>
         </div>
     );

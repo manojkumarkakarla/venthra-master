@@ -38,8 +38,7 @@ const FAQ = () => {
         <section id="faq" className="relative py-24 sm:py-32 overflow-hidden bg-[#f8fafc] dark:bg-slate-950">
             {/* Dynamic Animated Background */}
             <div className="absolute inset-0 pointer-events-none overflow-hidden">
-                <div className="absolute -top-40 -right-40 w-[800px] h-[800px] bg-gradient-to-br from-blue-200/40 to-cyan-100/40 dark:from-blue-900/20 dark:to-cyan-900/20 rounded-full blur-[100px] animate-blob" />
-                <div className="absolute bottom-1/2 -left-40 w-[600px] h-[600px] bg-gradient-to-tr from-purple-200/40 to-pink-100/40 dark:from-purple-900/20 dark:to-pink-900/20 rounded-full blur-[100px] animate-blob animation-delay-2000" />
+
                 
                 {/* Micro Grid */}
                 <div className="absolute inset-0 opacity-[0.03] dark:opacity-[0.05]" style={{ backgroundImage: 'linear-gradient(#3b82f6 1px, transparent 1px), linear-gradient(90deg, #3b82f6 1px, transparent 1px)', backgroundSize: '40px 40px' }} />
@@ -70,7 +69,7 @@ const FAQ = () => {
                             <AccordionItem
                                 key={index}
                                 value={`item-${index}`}
-                                className="group border border-slate-200/60 dark:border-slate-800 bg-white/60 dark:bg-slate-900/60 backdrop-blur-xl rounded-2xl px-6 sm:px-8 py-2 shadow-[0_5px_15px_-5px_rgba(0,0,0,0.05)] hover:shadow-[0_15px_40px_-10px_rgba(59,130,246,0.15)] transition-all duration-300 data-[state=open]:bg-white dark:data-[state=open]:bg-slate-900 data-[state=open]:shadow-lg data-[state=open]:border-blue-200/80 dark:data-[state=open]:border-blue-900/50"
+                                className="group border border-slate-200/60 dark:border-slate-800 bg-white/95 dark:bg-slate-900/95 rounded-2xl px-6 sm:px-8 py-2 shadow-[0_5px_15px_-5px_rgba(0,0,0,0.05)] hover:shadow-[0_15px_40px_-10px_rgba(59,130,246,0.15)] transition-all duration-300 data-[state=open]:bg-white dark:data-[state=open]:bg-slate-900 data-[state=open]:shadow-lg data-[state=open]:border-blue-200/80 dark:data-[state=open]:border-blue-900/50"
                             >
                                 <AccordionTrigger className="hover:no-underline py-4 sm:py-5 text-left transition-all">
                                     <div className="flex items-center gap-4 text-left w-full pr-4">

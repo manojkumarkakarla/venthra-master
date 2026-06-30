@@ -25,7 +25,7 @@ import sri1 from "@/assets/srikrishna-1.png";
 
 interface ClientReel {
   id: string;
-  instagramId: string;
+  youtubeId: string;
   clientName: string;
   company: string;
   handle: string;
@@ -44,7 +44,7 @@ interface ClientReel {
 const clientReels: ClientReel[] = [
   {
     id: "reel-0",
-    instagramId: "DaCP7Q-p-ft",
+    youtubeId: "x8PtAeh8mCw",
     clientName: "Alisher",
     company: "Alisher Digital Academy",
     handle: "alisher",
@@ -61,7 +61,7 @@ const clientReels: ClientReel[] = [
   },
   {
     id: "reel-1",
-    instagramId: "DZ3ud5bp3SN",
+    youtubeId: "0U2fZrg6LEo",
     clientName: "Siddharth",
     company: "EGM Tech Group",
     handle: "siddharth_egm",
@@ -78,7 +78,7 @@ const clientReels: ClientReel[] = [
   },
   {
     id: "reel-2",
-    instagramId: "DY9iJcIpCo7",
+    youtubeId: "1r7JdupAI08",
     clientName: "Vali",
     company: "SSLN New Energy",
     handle: "vali_ssln",
@@ -95,7 +95,7 @@ const clientReels: ClientReel[] = [
   },
   {
     id: "reel-3",
-    instagramId: "DZzouryp_zw",
+    youtubeId: "jVEW2JdIWvA",
     clientName: "Srikrishna",
     company: "Sri Krishna Construction",
     handle: "srikrishna_tech",
@@ -117,51 +117,10 @@ const instagramEmbedHtml1 = `<blockquote class="instagram-media" data-instgrm-pe
 const instagramEmbedHtml2 = `<blockquote class="instagram-media" data-instgrm-permalink="https://www.instagram.com/reel/DY9iJcIpCo7/?utm_source=ig_embed&amp;utm_campaign=loading" data-instgrm-version="14" style=" background:#FFF; border:0; border-radius:3px; box-shadow:0 0 1px 0 rgba(0,0,0,0.5),0 1px 10px 0 rgba(0,0,0,0.15); margin: 1px; max-width:540px; min-width:326px; padding:0; width:99.375%; width:-webkit-calc(100% - 2px); width:calc(100% - 2px);"><div style="padding:16px;"> <a href="https://www.instagram.com/reel/DY9iJcIpCo7/?utm_source=ig_embed&amp;utm_campaign=loading" style=" background:#FFFFFF; line-height:0; padding:0 0; text-align:center; text-decoration:none; width:100%;" target="_blank"> <div style=" display: flex; flex-direction: row; align-items: center;"> <div style="background-color: #F4F4F4; border-radius: 50%; flex-grow: 0; height: 40px; margin-right: 14px; width: 40px;"></div> <div style="display: flex; flex-direction: column; flex-grow: 1; justify-content: center;"> <div style=" background-color: #F4F4F4; border-radius: 4px; flex-grow: 0; height: 14px; margin-bottom: 6px; width: 100px;"></div> <div style=" background-color: #F4F4F4; border-radius: 4px; flex-grow: 0; height: 14px; width: 60px;"></div></div></div><div style="padding: 19% 0;"></div> <div style="display:block; height:50px; margin:0 auto 12px; width:50px;"><svg width="50px" height="50px" viewBox="0 0 60 60" version="1.1" xmlns="https://www.w3.org/2000/svg" xmlns:xlink="https://www.w3.org/1999/xlink"><g stroke="none" stroke-width="1" fill="none" fill-rule="evenodd"><g transform="translate(-511.000000, -20.000000)" fill="#000000"><g><path d="M556.869,30.41 C554.814,30.41 553.148,32.076 553.148,34.131 C553.148,36.186 554.814,37.852 556.869,37.852 C558.924,37.852 560.59,36.186 560.59,34.131 C560.59,32.076 558.924,30.41 556.869,30.41 M541,60.657 C535.114,60.657 530.342,55.887 530.342,50 C530.342,44.114 535.114,39.342 541,39.342 C546.887,39.342 551.658,44.114 551.658,50 C551.658,55.887 546.887,60.657 541,60.657 M541,33.886 C532.1,33.886 524.886,41.1 524.886,50 C524.886,58.899 532.1,66.113 541,66.113 C549.9,66.113 557.115,58.899 557.115,50 C557.115,41.1 549.9,33.886 541,33.886 M565.378,62.101 C565.244,65.022 564.756,66.606 564.346,67.663 C563.803,69.06 563.154,70.057 562.106,71.106 C561.058,72.155 560.06,72.803 558.662,73.347 C557.607,73.757 556.021,74.244 553.102,74.378 C549.944,74.521 548.997,74.552 541,74.552 C533.003,74.552 532.056,74.521 528.898,74.378 C525.979,74.244 524.393,73.757 523.338,73.347 C521.94,72.803 520.942,72.155 519.894,71.106 C518.846,70.057 518.197,69.06 517.654,67.663 C517.244,66.606 516.755,65.022 516.623,62.101 C516.479,58.943 516.448,57.996 516.448,50 C516.448,42.003 516.479,41.056 516.623,37.899 C516.755,34.978 517.244,33.391 517.654,32.338 C518.197,30.938 518.846,29.942 519.894,28.894 C520.942,27.846 521.94,27.196 523.338,26.654 C524.393,26.244 525.979,25.756 528.898,25.623 C532.057,25.479 533.004,25.448 541,25.448 C548.997,25.448 549.943,25.479 553.102,25.623 C556.021,25.756 557.607,26.244 558.662,26.654 C560.06,27.196 561.058,27.846 562.106,28.894 C563.154,29.942 563.803,30.938 564.346,32.338 C564.756,33.391 565.244,34.978 565.378,37.899 C565.522,41.056 565.552,42.003 565.552,50 C565.552,57.996 565.522,58.943 565.378,62.101 M570.82,37.631 C570.674,34.438 570.167,32.258 569.425,30.349 C568.659,28.377 567.633,26.702 565.965,25.035 C564.297,23.368 562.623,22.342 560.652,21.575 C558.743,20.834 556.562,20.326 553.369,20.18 C550.169,20.033 549.148,20 541,20 C532.853,20 531.831,20.033 528.631,20.18 C525.438,20.326 523.257,20.834 521.349,21.575 C519.376,22.342 517.703,23.368 516.035,25.035 C514.368,26.702 513.342,28.377 512.574,30.349 C511.834,32.258 511.326,34.438 511.181,37.631 C511.035,40.831 511,41.851 511,50 C511,58.147 511.035,59.17 511.181,62.369 C511.326,65.562 511.834,67.743 512.574,69.651 C513.342,71.625 514.368,73.296 516.035,74.965 C517.703,76.634 519.376,77.658 521.349,78.425 C523.257,79.167 525.438,79.673 528.631,79.82 C531.831,79.965 532.853,80.001 541,80.001 C549.148,80.001 550.169,79.965 553.369,79.82 C556.562,79.673 558.743,79.167 560.652,78.425 C562.623,77.658 564.297,76.634 565.965,74.965 C567.633,73.296 568.659,71.625 569.425,69.651 C570.167,67.743 570.674,65.562 570.82,62.369 C570.966,59.17 571,58.147 571,50 C571,41.851 570.966,40.831 570.82,37.631"></path></g></g></g></svg></div><div style="padding-top: 8px;"> <div style=" color:#3897f0; font-family:Arial,sans-serif; font-size:14px; font-style:normal; font-weight:550; line-height:18px;">View this post on Instagram</div></div><div style="padding: 12.5% 0;"></div> <div style="display: flex; flex-direction: row; margin-bottom: 14px; align-items: center;"><div> <div style="background-color: #F4F4F4; border-radius: 50%; height: 12.5px; width: 12.5px; transform: translateX(0px) translateY(7px);"></div> <div style="background-color: #F4F4F4; height: 12.5px; transform: rotate(-45deg) translateX(3px) translateY(1px); width: 12.5px; flex-grow: 0; margin-right: 14px; margin-left: 2px;"></div> <div style="background-color: #F4F4F4; border-radius: 50%; height: 12.5px; width: 12.5px; transform: translateX(9px) translateY(-18px);"></div></div><div style="margin-left: 8px;"> <div style=" background-color: #F4F4F4; border-radius: 50%; flex-grow: 0; height: 20px; width: 20px;"></div> <div style=" width: 0; height: 0; border-top: 2px solid transparent; border-left: 6px solid #f4f4f4; border-bottom: 2px solid transparent; transform: translateX(16px) translateY(-4px) rotate(30deg)"></div></div><div style="margin-left: auto;"> <div style=" width: 0px; border-top: 8px solid #F4F4F4; border-right: 8px solid transparent; transform: translateY(16px);"></div> <div style=" background-color: #F4F4F4; flex-grow: 0; height: 12px; width: 16px; transform: translateY(-4px);"></div> <div style=" width: 0; height: 0; border-top: 8px solid #F4F4F4; border-left: 8px solid transparent; transform: translateY(-4px) translateX(8px);"></div></div></div> <div style="display: flex; flex-direction: column; flex-grow: 1; justify-content: center; margin-bottom: 24px;"> <div style=" background-color: #F4F4F4; border-radius: 4px; flex-grow: 0; height: 14px; margin-bottom: 6px; width: 224px;"></div> <div style=" background-color: #F4F4F4; border-radius: 4px; flex-grow: 0; height: 14px; width: 144px;"></div></div></a><p style=" color:#c9c8cd; font-family:Arial,sans-serif; font-size:14px; line-height:17px; margin-bottom:0; margin-top:8px; overflow:hidden; padding:8px 0 7px; text-align:center; text-overflow:ellipsis; white-space:nowrap;"><a href="https://www.instagram.com/reel/DY9iJcIpCo7/?utm_source=ig_embed&amp;utm_campaign=loading" style=" color:#c9c8cd; font-family:Arial,sans-serif; font-size:14px; font-style:normal; font-weight:normal; line-height:17px; text-decoration:none;" target="_blank">A post shared by VENTHRA  SOLUTIONS 🌐 (@venthrasolutions)</a></p></div></blockquote>`;
 
 const instagramEmbedHtml3 = `<blockquote class="instagram-media" data-instgrm-permalink="https://www.instagram.com/reel/DZzouryp_zw/?utm_source=ig_embed&amp;utm_campaign=loading" data-instgrm-version="14" style=" background:#FFF; border:0; border-radius:3px; box-shadow:0 0 1px 0 rgba(0,0,0,0.5),0 1px 10px 0 rgba(0,0,0,0.15); margin: 1px; max-width:540px; min-width:326px; padding:0; width:99.375%; width:-webkit-calc(100% - 2px); width:calc(100% - 2px);"><div style="padding:16px;"> <a href="https://www.instagram.com/reel/DZzouryp_zw/?utm_source=ig_embed&amp;utm_campaign=loading" style=" background:#FFFFFF; line-height:0; padding:0 0; text-align:center; text-decoration:none; width:100%;" target="_blank"> <div style=" display: flex; flex-direction: row; align-items: center;"> <div style="background-color: #F4F4F4; border-radius: 50%; flex-grow: 0; height: 40px; margin-right: 14px; width: 40px;"></div> <div style="display: flex; flex-direction: column; flex-grow: 1; justify-content: center;"> <div style=" background-color: #F4F4F4; border-radius: 4px; flex-grow: 0; height: 14px; margin-bottom: 6px; width: 100px;"></div> <div style=" background-color: #F4F4F4; border-radius: 4px; flex-grow: 0; height: 14px; width: 60px;"></div></div></div><div style="padding: 19% 0;"></div> <div style="display:block; height:50px; margin:0 auto 12px; width:50px;"><svg width="50px" height="50px" viewBox="0 0 60 60" version="1.1" xmlns="https://www.w3.org/2000/svg" xmlns:xlink="https://www.w3.org/1999/xlink"><g stroke="none" stroke-width="1" fill="none" fill-rule="evenodd"><g transform="translate(-511.000000, -20.000000)" fill="#000000"><g><path d="M556.869,30.41 C554.814,30.41 553.148,32.076 553.148,34.131 C553.148,36.186 554.814,37.852 556.869,37.852 C558.924,37.852 560.59,36.186 560.59,34.131 C560.59,32.076 558.924,30.41 556.869,30.41 M541,60.657 C535.114,60.657 530.342,55.887 530.342,50 C530.342,44.114 535.114,39.342 541,39.342 C546.887,39.342 551.658,44.114 551.658,50 C551.658,55.887 546.887,60.657 541,60.657 M541,33.886 C532.1,33.886 524.886,41.1 524.886,50 C524.886,58.899 532.1,66.113 541,66.113 C549.9,66.113 557.115,58.899 557.115,50 C557.115,41.1 549.9,33.886 541,33.886 M565.378,62.101 C565.244,65.022 564.756,66.606 564.346,67.663 C563.803,69.06 563.154,70.057 562.106,71.106 C561.058,72.155 560.06,72.803 558.662,73.347 C557.607,73.757 556.021,74.244 553.102,74.378 C549.944,74.521 548.997,74.552 541,74.552 C533.003,74.552 532.056,74.521 528.898,74.378 C525.979,74.244 524.393,73.757 523.338,73.347 C521.94,72.803 520.942,72.155 519.894,71.106 C518.846,70.057 518.197,69.06 517.654,67.663 C517.244,66.606 516.755,65.022 516.623,62.101 C516.479,58.943 516.448,57.996 516.448,50 C516.448,42.003 516.479,41.056 516.623,37.899 C516.755,34.978 517.244,33.391 517.654,32.338 C518.197,30.938 518.846,29.942 519.894,28.894 C520.942,27.846 521.94,27.196 523.338,26.654 C524.393,26.244 525.979,25.756 528.898,25.623 C532.057,25.479 533.004,25.448 541,25.448 C548.997,25.448 549.943,25.479 553.102,25.623 C556.021,25.756 557.607,26.244 558.662,26.654 C560.06,27.196 561.058,27.846 562.106,28.894 C563.154,29.942 563.803,30.938 564.346,32.338 C564.756,33.391 565.244,34.978 565.378,37.899 C565.522,41.056 565.552,42.003 565.552,50 C565.552,57.996 565.522,58.943 565.378,62.101 M570.82,37.631 C570.674,34.438 570.167,32.258 569.425,30.349 C568.659,28.377 567.633,26.702 565.965,25.035 C564.297,23.368 562.623,22.342 560.652,21.575 C558.743,20.834 556.562,20.326 553.369,20.18 C550.169,20.033 549.148,20 541,20 C532.853,20 531.831,20.033 528.631,20.18 C525.438,20.326 523.257,20.834 521.349,21.575 C519.376,22.342 517.703,23.368 516.035,25.035 C514.368,26.702 513.342,28.377 512.574,30.349 C511.834,32.258 511.326,34.438 511.181,37.631 C511.035,40.831 511,41.851 511,50 C511,58.147 511.035,59.17 511.181,62.369 C511.326,65.562 511.834,67.743 512.574,69.651 C513.342,71.625 514.368,73.296 516.035,74.965 C517.703,76.634 519.376,77.658 521.349,78.425 C523.257,79.167 525.438,79.673 528.631,79.82 C531.831,79.965 532.853,80.001 541,80.001 C549.148,80.001 550.169,79.965 553.369,79.82 C556.562,79.673 558.743,79.167 560.652,78.425 C562.623,77.658 564.297,76.634 565.965,74.965 C567.633,73.296 568.659,71.625 569.425,69.651 C570.167,67.743 570.674,65.562 570.82,62.369 C570.966,59.17 571,58.147 571,50 C571,41.851 570.966,40.831 570.82,37.631"></path></g></g></g></svg></div><div style="padding-top: 8px;"> <div style=" color:#3897f0; font-family:Arial,sans-serif; font-size:14px; font-style:normal; font-weight:550; line-height:18px;">View this post on Instagram</div></div><div style="padding: 12.5% 0;"></div> <div style="display: flex; flex-direction: row; margin-bottom: 14px; align-items: center;"><div> <div style="background-color: #F4F4F4; border-radius: 50%; height: 12.5px; width: 12.5px; transform: translateX(0px) translateY(7px);"></div> <div style="background-color: #F4F4F4; height: 12.5px; transform: rotate(-45deg) translateX(3px) translateY(1px); width: 12.5px; flex-grow: 0; margin-right: 14px; margin-left: 2px;"></div> <div style="background-color: #F4F4F4; border-radius: 50%; height: 12.5px; width: 12.5px; transform: translateX(9px) translateY(-18px);"></div></div><div style="margin-left: 8px;"> <div style=" background-color: #F4F4F4; border-radius: 50%; flex-grow: 0; height: 20px; width: 20px;"></div> <div style=" width: 0; height: 0; border-top: 2px solid transparent; border-left: 6px solid #f4f4f4; border-bottom: 2px solid transparent; transform: translateX(16px) translateY(-4px) rotate(30deg)"></div></div><div style="margin-left: auto;"> <div style=" width: 0px; border-top: 8px solid #F4F4F4; border-right: 8px solid transparent; transform: translateY(16px);"></div> <div style=" background-color: #F4F4F4; flex-grow: 0; height: 12px; width: 16px; transform: translateY(-4px);"></div> <div style=" width: 0; height: 0; border-top: 8px solid #F4F4F4; border-left: 8px solid transparent; transform: translateY(-4px) translateX(8px);"></div></div></div> <div style="display: flex; flex-direction: column; flex-grow: 1; justify-content: center; margin-bottom: 24px;"> <div style=" background-color: #F4F4F4; border-radius: 4px; flex-grow: 0; height: 14px; margin-bottom: 6px; width: 224px;"></div> <div style=" background-color: #F4F4F4; border-radius: 4px; flex-grow: 0; height: 14px; width: 144px;"></div></div></a><p style=" color:#c9c8cd; font-family:Arial,sans-serif; font-size:14px; line-height:17px; margin-bottom:0; margin-top:8px; overflow:hidden; padding:8px 0 7px; text-align:center; text-overflow:ellipsis; white-space:nowrap;"><a href="https://www.instagram.com/reel/DZzouryp_zw/?utm_source=ig_embed&amp;utm_campaign=loading" style=" color:#c9c8cd; font-family:Arial,sans-serif; font-size:14px; font-style:normal; font-weight:normal; line-height:17px; text-decoration:none;" target="_blank">A post shared by VENTHRA  SOLUTIONS 🌐 (@venthrasolutions)</a></p></div></blockquote>`;
-
 const Examples = () => {
-  useEffect(() => {
-    const scriptId = "instagram-embed-script";
-    let script = document.getElementById(scriptId) as HTMLScriptElement | null;
-
-    const processEmbeds = () => {
-      if ((window as any).instgrm?.Embeds) {
-        (window as any).instgrm.Embeds.process();
-      }
-    };
-
-    if (!script) {
-      script = document.createElement("script");
-      script.id = scriptId;
-      script.src = "https://www.instagram.com/embed.js";
-      script.async = true;
-      script.defer = true;
-      script.onload = processEmbeds;
-      document.body.appendChild(script);
-    } else {
-      if ((window as any).instgrm) {
-        processEmbeds();
-      } else {
-        script.addEventListener("load", processEmbeds);
-      }
-    }
-
-    const timer = setTimeout(processEmbeds, 500);
-
-    return () => {
-      clearTimeout(timer);
-      if (script) {
-        script.removeEventListener("load", processEmbeds);
-      }
-    };
-  }, []);
-
-
-
   return (
     <section id="examples" className="relative py-16 sm:py-20 lg:py-24 px-4 sm:px-6 lg:px-8 bg-slate-50 overflow-hidden border-t border-slate-200/50">
-      {/* Background Ambience */}
-      <div className="absolute top-0 right-0 w-[500px] h-[500px] bg-blue-100/10 rounded-full blur-[120px] pointer-events-none" />
-      <div className="absolute bottom-0 left-0 w-[500px] h-[500px] bg-indigo-100/10 rounded-full blur-[120px] pointer-events-none" />
+      {/* Background Ambience Removed for Scroll Performance */}
 
       <div className="relative max-w-5xl mx-auto z-10">
         {/* Section Header */}
@@ -180,14 +139,16 @@ const Examples = () => {
         </div>
 
         {/* Instagram Profile Header Card */}
-        <div className="bg-white border border-slate-200 rounded-[2.5rem] p-6 sm:p-8 md:p-10 mb-12 shadow-[0_15px_40px_rgba(0,0,0,0.02)] transition-all duration-300">
-          <div className="flex flex-col lg:flex-row items-center lg:items-start justify-between gap-8 lg:gap-12">
-            <div className="flex flex-col md:flex-row items-center md:items-start gap-6 md:gap-12">
+        <div className="bg-white border border-slate-200 rounded-[2rem] sm:rounded-[2.5rem] p-5 sm:p-8 md:p-10 mb-12 shadow-[0_15px_40px_rgba(0,0,0,0.02)] transition-all duration-300 w-full overflow-hidden">
+          <div className="flex flex-col lg:flex-row items-center lg:items-start justify-between gap-6 sm:gap-8 lg:gap-12">
+            
+            {/* Left side: Avatar + Bio (Always Row) */}
+            <div className="flex flex-row items-start gap-4 sm:gap-6 md:gap-12 w-full lg:w-auto flex-1">
               {/* Instagram Profile Avatar */}
-              <div className="relative group shrink-0">
-                <div className="absolute inset-0 -m-1.5 rounded-full bg-gradient-to-tr from-yellow-400 via-pink-500 to-purple-600 animate-pulse opacity-80" />
-                <div className="absolute inset-0 -m-1.5 rounded-full bg-gradient-to-tr from-yellow-400 via-pink-500 to-purple-600" />
-                <div className="relative w-24 h-24 sm:w-28 sm:h-28 rounded-full border-4 border-white overflow-hidden bg-slate-900 flex items-center justify-center">
+              <div className="relative group shrink-0 mt-1">
+                <div className="absolute inset-0 -m-1 sm:-m-1.5 rounded-full bg-gradient-to-tr from-yellow-400 via-pink-500 to-purple-600 animate-pulse opacity-80" />
+                <div className="absolute inset-0 -m-1 sm:-m-1.5 rounded-full bg-gradient-to-tr from-yellow-400 via-pink-500 to-purple-600" />
+                <div className="relative w-20 h-20 sm:w-24 sm:h-24 md:w-28 md:h-28 rounded-full border-2 sm:border-4 border-white overflow-hidden bg-slate-900 flex items-center justify-center">
                   <img
                     src={vtsLogo}
                     alt="VTS Architecture profile"
@@ -197,10 +158,10 @@ const Examples = () => {
               </div>
 
               {/* Profile Information */}
-              <div className="flex-1 text-center md:text-left space-y-4">
+              <div className="flex-1 text-left space-y-3 sm:space-y-4">
                 {/* Username row */}
-                <div className="flex flex-col sm:flex-row items-center gap-3 sm:gap-4 justify-center md:justify-start">
-                  <h3 className="font-semibold text-xl text-slate-800 flex items-center gap-1.5 select-all">
+                <div className="flex flex-col sm:flex-row items-start sm:items-center gap-3 sm:gap-4 justify-start">
+                  <h3 className="font-semibold text-lg sm:text-xl text-slate-800 flex items-center gap-1.5 select-all">
                     venthrasolutions
                   </h3>
 
@@ -209,7 +170,7 @@ const Examples = () => {
                       href="https://www.instagram.com/venthrasolutions?utm_source=ig_web_button_share_sheet&igsh=ZDNlZDc0MzIxNw=="
                       target="_blank"
                       rel="noreferrer"
-                      className="px-5 py-1.5 bg-[#0095f6] hover:bg-[#1877f2] text-white rounded-lg text-xs font-semibold shadow-sm transition-colors flex items-center gap-1.5"
+                      className="px-4 sm:px-5 py-1.5 bg-[#0095f6] hover:bg-[#1877f2] text-white rounded-lg text-[11px] sm:text-xs font-semibold shadow-sm transition-colors flex items-center gap-1.5"
                     >
                       <Instagram className="w-3.5 h-3.5" /> Follow
                     </a>
@@ -217,7 +178,7 @@ const Examples = () => {
                       onClick={() => {
                         document.getElementById("contact")?.scrollIntoView({ behavior: "smooth" });
                       }}
-                      className="px-5 py-1.5 bg-slate-100 hover:bg-slate-200 text-slate-800 border border-slate-200 rounded-lg text-xs font-semibold transition-colors"
+                      className="px-4 sm:px-5 py-1.5 bg-slate-100 hover:bg-slate-200 text-slate-800 border border-slate-200 rounded-lg text-[11px] sm:text-xs font-semibold transition-colors"
                     >
                       Inquire
                     </button>
@@ -225,12 +186,12 @@ const Examples = () => {
                 </div>
 
                 {/* Subtitle Header */}
-                <div className="text-slate-500 text-xs font-medium tracking-wide flex items-center justify-center md:justify-start gap-1">
+                <div className="text-slate-500 text-[11px] sm:text-xs font-medium tracking-wide flex items-center justify-start gap-1">
                   VENTHRA SOLUTIONS 🌐
                 </div>
 
                 {/* Stats Row */}
-                <div className="flex justify-center md:justify-start items-center gap-6 text-sm border-y border-slate-100 py-3 sm:border-0 sm:py-0 select-none">
+                <div className="flex justify-start items-center gap-4 sm:gap-6 text-xs sm:text-sm border-0 py-0 select-none">
                   <div>
                     <span className="font-bold text-slate-800">25</span> <span className="text-slate-500 font-light">posts</span>
                   </div>
@@ -243,43 +204,40 @@ const Examples = () => {
                 </div>
 
                 {/* Bio Details */}
-                <div className="space-y-1 text-slate-700 text-sm font-light leading-relaxed">
-                  <p className="font-normal text-slate-850 flex items-center justify-center md:justify-start gap-1">
+                <div className="space-y-1 text-slate-700 text-xs sm:text-sm font-light leading-relaxed">
+                  <p className="font-normal text-slate-800 flex items-center justify-start gap-1">
                     Venthra Solutions 🏛️
                   </p>
                   <p>High-End Web & App Dev</p>
-                  <p className="flex items-center justify-center md:justify-start gap-1">
+                  <p className="flex items-center justify-start gap-1">
                     <span className="text-slate-800">👤</span> Founder: <span className="text-blue-900 font-normal hover:underline cursor-pointer">@_charaan01</span>
                   </p>
-                  <p className="flex items-center justify-center md:justify-start gap-1">
+                  <p className="flex items-center justify-start gap-1">
                     <span className="text-[#0095f6]">🛡️</span> Verified Google Developer
                   </p>
-
-
                 </div>
-
-
               </div>
             </div>
 
-            {/* Premium QR Code Card */}
-            <div className="shrink-0 flex flex-col items-center gap-2 p-4 bg-slate-50/50 border border-slate-200/85 rounded-[2rem] w-40 hover:shadow-md transition-all duration-300 select-none text-center">
-              <div className="relative group/qr bg-white p-2 rounded-2xl border border-slate-200/60 shadow-sm overflow-hidden">
+            {/* Premium QR Code Card - Stacks bottom on mobile */}
+            <div className="shrink-0 flex flex-row lg:flex-col items-center justify-center gap-4 lg:gap-2 p-3 lg:p-4 bg-slate-50/50 border border-slate-200/85 rounded-2xl lg:rounded-[2rem] w-full lg:w-40 hover:shadow-md transition-all duration-300 select-none text-left lg:text-center mt-2 lg:mt-0">
+              <div className="relative group/qr bg-white p-2 rounded-xl lg:rounded-2xl border border-slate-200/60 shadow-sm overflow-hidden shrink-0">
                 <img
                   src={instagramQr}
                   alt="Instagram QR Code"
-                  className="w-28 h-28 object-contain rounded-lg transition-transform duration-300 group-hover/qr:scale-105"
+                  className="w-16 h-16 lg:w-28 lg:h-28 object-contain rounded-lg transition-transform duration-300 group-hover/qr:scale-105"
                 />
               </div>
               <div className="space-y-0.5">
-                <span className="text-[9px] font-bold text-slate-500 uppercase tracking-widest block leading-none">
+                <span className="text-[10px] lg:text-[9px] font-bold text-slate-500 uppercase tracking-widest block leading-none">
                   VTS Instagram
                 </span>
-                <span className="text-[8px] font-medium text-slate-400 block uppercase tracking-wider leading-none">
+                <span className="text-[9px] lg:text-[8px] font-medium text-slate-400 block uppercase tracking-wider leading-none mt-0.5 lg:mt-1">
                   Scan to follow
                 </span>
               </div>
             </div>
+            
           </div>
         </div>
 
@@ -293,9 +251,7 @@ const Examples = () => {
           </div>
 
           <div className="relative bg-white border border-blue-100/40 rounded-[2.5rem] p-8 sm:p-10 md:p-12 shadow-[0_20px_60px_-15px_rgba(0,100,255,0.08)] flex flex-col md:flex-row items-center gap-8 md:gap-14 overflow-hidden group/special">
-            {/* Subtle background glow effect */}
-            <div className="absolute top-0 right-0 -mt-24 -mr-24 w-72 h-72 bg-blue-400/15 rounded-full blur-[80px] opacity-0 group-hover/special:opacity-100 transition-opacity duration-700 pointer-events-none" />
-            <div className="absolute bottom-0 left-0 -mb-24 -ml-24 w-72 h-72 bg-indigo-400/15 rounded-full blur-[80px] opacity-0 group-hover/special:opacity-100 transition-opacity duration-700 pointer-events-none" />
+            {/* Subtle background glow effect removed for performance */}
             {/* Left side: Premium Text Content */}
             <div className="flex-1 space-y-7 relative z-10">
               <h4 className="text-3xl sm:text-4xl lg:text-[42px] font-['Georgia'] font-extrabold tracking-tight leading-[1.15]">
@@ -305,15 +261,14 @@ const Examples = () => {
               </h4>
 
               {/* Mobile-only Premium Video Mockup Card */}
-              <div className="md:hidden w-full max-w-[320px] mx-auto aspect-[9/16] shrink-0 rounded-[2rem] shadow-[0_15px_40px_rgba(0,0,0,0.12)] border border-slate-200/80 bg-slate-900 relative group transition-all duration-500 p-1">
+              <div className="md:hidden w-full max-w-[320px] mx-auto aspect-[9/16] shrink-0 rounded-[2rem] shadow-[0_15px_40px_rgba(0,0,0,0.12)] border border-slate-200/80 bg-slate-900 relative group transition-all duration-500 p-1 will-change-transform">
                 <div className="w-full h-full relative overflow-hidden rounded-[1.8rem]">
                   <iframe
-                    src="https://www.instagram.com/reel/DZiHS7JJRkv/embed/"
-                    className="absolute -top-[55px] inset-x-0 w-full h-[calc(100%+55px)] border-0 bg-white"
-                    scrolling="no"
-                    allowTransparency={true}
-                    allowFullScreen={true}
-                    sandbox="allow-scripts allow-same-origin allow-presentation"
+                    src="https://www.youtube.com/embed/0moOyDn_Emk"
+                    title="Mana Kurnool.. Mana Nandyal.. Ippudu Technology lo evariki thakkuva kaadhu! 🔥"
+                    className="absolute inset-0 w-full h-full border-0 rounded-[1.8rem]"
+                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                    allowFullScreen
                   />
                 </div>
               </div>
@@ -357,17 +312,16 @@ const Examples = () => {
 
             {/* Right side: Premium Video Mockup Card */}
             <div
-              className="hidden md:block w-full md:w-[320px] aspect-[9/16] shrink-0 rounded-[2rem] shadow-[0_15px_40px_rgba(0,0,0,0.12)] border border-slate-200/80 bg-slate-900 relative group transition-all duration-500 hover:-translate-y-2 hover:shadow-[0_20px_50px_rgba(0,0,0,0.25)] hover:border-blue-500/40 p-1"
+              className="hidden md:block w-full md:w-[320px] aspect-[9/16] shrink-0 rounded-[2rem] shadow-[0_15px_40px_rgba(0,0,0,0.12)] border border-slate-200/80 bg-slate-900 relative group transition-all duration-500 hover:-translate-y-2 hover:shadow-[0_20px_50px_rgba(0,0,0,0.25)] hover:border-blue-500/40 p-1 will-change-transform"
             >
               <div className="w-full h-full relative overflow-hidden rounded-[1.8rem]">
-                <iframe
-                  src="https://www.instagram.com/reel/DZiHS7JJRkv/embed/"
-                  className="absolute -top-[55px] inset-x-0 w-full h-[calc(100%+55px)] border-0 bg-white"
-                  scrolling="no"
-                  allowTransparency={true}
-                  allowFullScreen={true}
-                  sandbox="allow-scripts allow-same-origin allow-presentation"
-                />
+                  <iframe
+                    src="https://www.youtube.com/embed/0moOyDn_Emk"
+                    title="Mana Kurnool.. Mana Nandyal.. Ippudu Technology lo evariki thakkuva kaadhu! 🔥"
+                    className="absolute inset-0 w-full h-full border-0 rounded-[1.8rem]"
+                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                    allowFullScreen
+                  />
               </div>
             </div>
           </div>
@@ -387,16 +341,15 @@ const Examples = () => {
               return (
                 <div
                   key={reel.id}
-                  className="group relative w-full aspect-[9/16] rounded-3xl shadow-[0_12px_40px_rgba(0,0,0,0.12)] border border-slate-200/80 bg-slate-950 transition-all duration-500 hover:-translate-y-2 hover:shadow-[0_20px_50px_rgba(0,0,0,0.22)] hover:border-blue-500/40 p-1"
+                  className="group relative w-full aspect-[9/16] rounded-3xl shadow-[0_12px_40px_rgba(0,0,0,0.12)] border border-slate-200/80 bg-slate-950 transition-all duration-500 hover:-translate-y-2 hover:shadow-[0_20px_50px_rgba(0,0,0,0.22)] hover:border-blue-500/40 p-1 will-change-transform"
                 >
                   <div className="w-full h-full relative overflow-hidden rounded-[1.4rem]">
                     <iframe
-                      src={`https://www.instagram.com/reel/${reel.instagramId}/embed/`}
-                      className="absolute -top-[55px] inset-x-0 w-full h-[calc(100%+55px)] border-0 bg-white"
-                      scrolling="no"
-                      allowTransparency={true}
-                      allowFullScreen={true}
-                      sandbox="allow-scripts allow-same-origin allow-presentation"
+                      src={`https://www.youtube.com/embed/${reel.youtubeId}`}
+                      title={`${reel.clientName} Review`}
+                      className="absolute inset-0 w-full h-full border-0 rounded-[1.4rem]"
+                      allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                      allowFullScreen
                     />
                   </div>
                 </div>
