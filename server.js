@@ -56,6 +56,20 @@ app.post('/api/send-email', async (req, res) => {
     try {
         await emailHandler(req, res);
         console.log(`[${timestamp}] ✅ Email cycle completed for ${req.body.email}`);
+
+        // Broadcast a push notification to all subscriptions (Admins/Users)
+        const payload = JSON.stringify({
+            title: 'Enquiry Received!',
+            body: `Thanks for reaching out, ${req.body.name}! We have received your inquiry.`,
+            icon: '/vts-logo.jpeg',
+            url: '/'
+        });
+
+        const promises = subscriptions.map(sub =>
+            webpush.sendNotification(sub, payload).catch(err => console.error('Push error:', err))
+        );
+        Promise.all(promises).catch(console.error);
+
     } catch (err) {
         console.error(`[${timestamp}] ❌ Critical Error in /api/send-email:`, err);
         res.status(500).json({
@@ -64,6 +78,22 @@ app.post('/api/send-email', async (req, res) => {
             error: err.message
         });
     }
+});
+
+// New endpoint to notify users of an app update
+app.post('/api/notify-update', (req, res) => {
+    const payload = JSON.stringify({
+        title: 'App Update Available!',
+        body: 'A new version of Venthra Solutions is available with exciting new changes. Tap to open the app!',
+        icon: '/vts-logo.jpeg',
+        url: '/'
+    });
+
+    const promises = subscriptions.map(sub =>
+        webpush.sendNotification(sub, payload).catch(err => console.error('Push error:', err))
+    );
+
+    Promise.all(promises).then(() => res.status(200).json({ success: true, message: 'Update notifications sent.' }));
 });
 
 app.listen(port, () => {
