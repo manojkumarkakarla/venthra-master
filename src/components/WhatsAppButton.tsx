@@ -14,7 +14,7 @@ const WhatsAppButton = () => {
     return (
         <div className="fixed bottom-6 left-6 z-[9999] animate-in fade-in slide-in-from-bottom-4 duration-700">
             <a
-                href="https://wa.me/8309188820?text=Hi%20Venthra%20Solutions,%20I'd%20like%20to%20know%20more%20about%20your%20services!"
+                href="https://wa.me/918309188820?text=Hi%20Venthra%20Solutions,%20I'd%20like%20to%20know%20more%20about%20your%20services!"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="group relative flex items-center justify-center w-[60px] h-[60px] bg-[#25D366] text-white rounded-full shadow-[0_4px_14px_0_rgba(37,211,102,0.39)] hover:shadow-[0_6px_20px_rgba(37,211,102,0.33)] hover:scale-110 transition-all duration-300"
