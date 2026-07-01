@@ -120,7 +120,9 @@ const InteractiveHero = () => {
     const webApps = [
         { name: 'Trust', icon: <img src={trustIcon} alt="Trust" className="w-full h-full object-cover rounded-2xl border-2 border-white" />, color: 'from-blue-400 to-indigo-500 shadow-indigo-500/20' },
         { name: 'Honesty', icon: <img src={honestyIcon} alt="Honesty" className="w-full h-full object-cover rounded-2xl border-2 border-white" />, color: 'from-teal-400 to-emerald-500 shadow-emerald-500/20' },
-        { name: 'Discipline', icon: <img src={disciplineIcon} alt="Discipline" className="w-full h-full object-cover rounded-2xl border-2 border-white" />, color: 'from-purple-400 to-fuchsia-500 shadow-purple-500/20' }
+        { name: 'Discipline', icon: <img src={disciplineIcon} alt="Discipline" className="w-full h-full object-cover rounded-2xl border-2 border-white" />, color: 'from-purple-400 to-fuchsia-500 shadow-purple-500/20' },
+        { name: 'Loyalty', icon: <img src={punctualityIcon} alt="Loyalty" className="w-full h-full object-cover rounded-2xl border-2 border-white" />, color: 'from-pink-400 to-rose-500 shadow-rose-500/20' },
+        { name: 'Quality', icon: <img src={qualityIcon} alt="Quality" className="w-full h-full object-cover rounded-2xl border-2 border-white" />, color: 'from-amber-400 to-orange-500 shadow-orange-500/20' }
     ];
 
     return (
